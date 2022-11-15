@@ -1,0 +1,135 @@
+### Configuration file for qopen package in JSON format
+# Comments are indicated with "#" and ignored while parsing
+
+{
+
+### Options for input and output ###
+
+"events": "../data/cat55.csz",
+"inventory": "../data/stations/*.xml",
+"read_events_kwargs": {"check_compression": false},
+"filter_inventory": {"channel": "HH?", "location": ""},
+"data": "plugin",
+"plugin": "data : get_data",
+
+# Request window of data in s relative to origin time
+"request_window": [-50, 100],
+"cache_waveforms": null,
+"output": "results.json",
+"indent": 2,
+
+
+"logfile": "log.txt",
+"loglevel": 3,
+"njobs": null,
+
+
+### Options for inversion ###
+
+"invert_events_simultaneously": false,
+"mean": "robust",
+"v0": 3200,
+"rho0": 2700,
+"R0": 1,
+"free_surface": 4,
+"optimize": {"method": "golden", "tol": 1e-1},
+"g0_bounds": [1e-8, 1e-3],
+"b_bounds": [1e-3, 10],
+"remove_response": "sensitivity",
+"correct_for_elevation": false,
+"filter": {"corners": 2, "zerophase": true},
+"freqs": {"width": 1, "cfreqs": [0.75, 1.06, 1.5, 2.1, 3.0, 4.2, 6.0, 8.5, 12.0, 17.0, 24.0, 33.9, 48.0]},
+
+# Use picks given in events file to determine the P- and S-onset.
+# Picks can also be used to calculate v0. If a station does not have a
+# S pick (S or Sg) it is ignored.
+"use_picks": true,
+
+# Otherwise these velocities are used together with the distance between
+# preferred origin and station to determine the onsets
+#"vp": 6000,
+#"vs": 3500,
+
+"adjust_sonset": null,
+
+"remove_noise": true,
+
+"noise_windows": [["OT-25s", "OT-20s"], ["OT-20s", "OT-10s"], ["OT-10s", "OT+0s"]],
+"bulk_window": ["S-1s", "S+3s"],
+"coda_window": ["S+3s", ["S+50s", "2SNR"]], # Coda window ends 50s after S-onset or if SNR of 2 is reached.
+"request_window_tolerance": 30,
+
+"weight" : [1, "bulkwindow"],
+"smooth": 1,
+"smooth_window": "flat",
+"cut_coda": {"smooth": 1, "ratio": 3},
+
+ "skip": {"coda_window": 2,
+          "num_pairs": 3},
+
+"seismic_moment_method": "robust_fit",
+"seismic_moment_options": {"fc": null, "n": null, "gamma": 2,
+                           "fc_lim": [0.5, 20], "num_points": 7},
+
+"coda_normalization": null,
+
+### Plot options ###
+
+### Plot options ###
+
+# For all parameters which can be used in the plot_*_options dictionaries see the qopen.imaging module.
+
+# Plot observed energies
+# xlim_min: time limits for linear plot (relative to origin time)
+# xlim_log: time limits for log plot (relative to origin time)
+# fname: filename gets populated by eventid and freq_band
+"plot_energies": false,
+"plot_energies_options": {"fname": "plots/energies_{evid}_{f1:06.2f}Hz-{f2:06.2f}Hz.png",
+                          "xlim_lin": [0, 30], "xlim_log": [1, 110]},
+
+# Plot optimization routine
+# num: Number of fit plots
+# fname: filename gets populated by eventid and freq_band
+"plot_optimization": true,
+"plot_optimization_options": {"num": 7,
+                              "fname": "plots/optimization_{evid}_{f1:06.2f}Hz-{f2:06.2f}Hz.png"},
+
+# Plot fits for optimization result
+# fname: filename gets populated by eventid and freq_band
+"plot_fits": true,
+"plot_fits_options": {"fname": "plots/fits_{evid}_{f1:06.2f}Hz-{f2:06.2f}Hz.png",
+                      "xlim": [-5, 105]},
+
+# Plot scattering parameters and magnitude estimation for one event
+# fname: filename gets populated by eventid
+"plot_eventresult": true,
+"plot_eventresult_options": {"fname": "plots/eventresult_{evid}.png"},
+
+# Plot site corrections for one event
+# fname: filename gets populated by eventid
+"plot_eventsites": true,
+"plot_eventsites_options": {"fname": "plots/eventsites_{evid}.png"},
+
+# Plot mean attenuation and scattering properties
+# fname: filename
+"plot_results": true,
+"plot_results_options": {"fname": "plots/results.pdf", "llim": [0.5e1, 0.5e3], "Qlim": [1e-4, 1e-1]},
+
+# Plot mean site amplification factors
+# fname: filename
+"plot_sites": true,
+"plot_sites_options": {"fname": "plots/sites.pdf",  "ylim": [1e-1, 1e3]},
+
+# Plot source displacement spectra
+# fname: filename
+"plot_sds": true,
+"plot_sds_options": {"fname": "plots/sds.pdf", "nx": 8, "figsize": [14, 14], "annotate": true},
+
+# Plot comparison between magnitude determined by this script and magnitude
+# from event file
+# fname: filename
+"plot_mags": true,
+"plot_mags_options": {"fname": "plots/mags.pdf"}
+
+
+}
