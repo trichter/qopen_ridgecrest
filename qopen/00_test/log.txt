@@ -1,0 +1,740 @@
+2022-11-15 10:54:24,723 core  1132759INFO    Qopen version 4.3-dev
+2022-11-15 10:54:26,638 core  1132759INFO    read inventory with 144 stations
+2022-11-15 10:54:26,654 core  1132759INFO    filter inventory with 34 stations
+2022-11-15 10:54:27,555 core  1132759INFO    read 55 events
+2022-11-15 10:54:27,556 core  1132759INFO    init data from plugin
+2022-11-15 10:54:27,556 core  1132759DEBUG   use only event with id 38474119
+2022-11-15 10:54:27,573 core  1132759INFO    Use Qopen command go
+2022-11-15 10:54:27,573 core  1132759DEBUG   start qopen routine with parameters {"request_window": [-50, 100], "njobs": null, "invert_events_simultaneously": false, "mean": "robust", "v0": 3200, "rho0": 2700, "R0": 1, "free_surface": 4, "optimize": {"method": "golden", "tol": 0.1}, "g0_bounds": [1e-08, 0.001], "b_bounds": [0.001, 10], "remove_response": "sensitivity", "correct_for_elevation": false, "filter": {"corners": 2, "zerophase": true}, "freqs": {"width": 1, "cfreqs": [0.75, 1.06, 1.5, 2.1, 3.0, 4.2, 6.0, 8.5, 12.0, 17.0, 24.0, 33.9, 48.0]}, "use_picks": true, "adjust_sonset": null, "remove_noise": true, "noise_windows": [["OT-25s", "OT-20s"], ["OT-20s", "OT-10s"], ["OT-10s", "OT+0s"]], "bulk_window": ["S-1s", "S+3s"], "coda_window": ["S+3s", ["S+50s", "2SNR"]], "request_window_tolerance": 30, "weight": [1, "bulkwindow"], "smooth": 1, "smooth_window": "flat", "cut_coda": {"smooth": 1, "ratio": 3}, "skip": {"coda_window": 2, "num_pairs": 3}, "seismic_moment_method": "robust_fit", "seismic_moment_options": {"fc": null, "n": null, "gamma": 2, "fc_lim": [0.5, 20], "num_points": 7}, "coda_normalization": null, "plot_energies": false, "plot_energies_options": {"fname": "00_test/plots/energies_{evid}_{f1:06.2f}Hz-{f2:06.2f}Hz.png", "xlim_lin": [0, 30], "xlim_log": [1, 110]}, "plot_optimization": true, "plot_optimization_options": {"num": 7, "fname": "00_test/plots/optimization_{evid}_{f1:06.2f}Hz-{f2:06.2f}Hz.png"}, "plot_fits": true, "plot_fits_options": {"fname": "00_test/plots/fits_{evid}_{f1:06.2f}Hz-{f2:06.2f}Hz.png", "xlim": [-5, 105]}, "plot_eventresult": true, "plot_eventresult_options": {"fname": "00_test/plots/eventresult_{evid}.png"}, "plot_eventsites": true, "plot_eventsites_options": {"fname": "00_test/plots/eventsites_{evid}.png"}, "plot_results": true, "plot_results_options": {"fname": "00_test/plots/results.pdf", "llim": [5.0, 500.0], "Qlim": [0.0001, 0.1], "mean": "robust"}, "plot_sites": true, "plot_sites_options": {"fname": "00_test/plots/sites.pdf", "ylim": [0.1, 1000.0], "mean": "robust"}, "plot_sds": true, "plot_sds_options": {"fname": "00_test/plots/sds.pdf", "nx": 8, "figsize": [14, 14], "annotate": true}, "plot_mags": true, "plot_mags_options": {"fname": "00_test/plots/mags.pdf"}, "cmd": "go"}
+2022-11-15 10:54:27,614 core  1132759INFO    event 38474119 (no 1 of 1 | +35.673 -117.519 8.7km M3.1 | 2019-07-07T09:09:25): start processing
+2022-11-15 10:54:27,615 core  1132759DEBUG   use all available cores for parallel computation
+2022-11-15 10:54:27,615 core  1132759INFO    central frequencies: (0.75, 1.06, 1.5, 2.1, 3.0, 4.2, 6.0, 8.5, 12.0, 17.0, 24.0, 33.9, 48.0)
+2022-11-15 10:54:27,615 core  1132759INFO    freq bands: (0.500, 1.000), (0.707, 1.413), (1.000, 2.000), (1.400, 2.800), (2.000, 4.000), (2.800, 5.600), (4.000, 8.000), (5.667, 11.333), (8.000, 16.000), (11.333, 22.667), (16.000, 32.000), (22.600, 45.200), (32.000, 64.000)
+2022-11-15 10:54:27,616 core  1132759INFO    34 stations and 1 events -> 34 pairs
+2022-11-15 10:54:27,616 warnings1132759WARNING /home/eule/anaconda/envs/eqspec/lib/python3.10/site-packages/obspy/core/inventory/inventory.py:482: UserWarning: Found more than one matching channel metadata. Returning first.
+  warnings.warn(msg)
+
+2022-11-15 10:54:27,619 core  1132759INFO    34 pairs after distance selection
+2022-11-15 10:54:27,619 core  1132759DEBUG   ([('38474119', 'CI.CLC'), ('38474119', 'CI.SRT'), ('38474119', 'CI.CCC'), ('38474119', 'CI.LRL'), ('38474119', 'CI.TOW2'), ('38474119', 'CI.SLA'), ('38474119', 'CI.WRC2'), ('38474119', 'CI.WBM'), ('38474119', 'CI.MPM'), ('38474119', 'CI.JRC2'), ('38474119', 'CI.WCS2'), ('38474119', 'CI.DTP'), ('38474119', 'CI.WMF'), ('38474119', 'CI.WBS'), ('38474119', 'CI.WOR'), ('38474119', 'CI.DAW'), ('38474119', 'NN.QSM'), ('38474119', 'LB.DAC'), ('38474119', 'CI.CCA'), ('38474119', 'CI.WHF'), ('38474119', 'CI.HAR'), ('38474119', 'CI.GSC'), ('38474119', 'CI.LMR2'), ('38474119', 'CI.ISA'), ('38474119', 'CI.WLH2'), ('38474119', 'CI.HYS'), ('38474119', 'CI.TEH'), ('38474119', 'CI.WAS2'), ('38474119', 'NN.GWY'), ('38474119', 'CI.EDW2'), ('38474119', 'CI.CWC'), ('38474119', 'CI.CGO'), ('38474119', 'CI.FUR'), ('38474119', 'CI.LDR')])
+2022-11-15 10:54:27,620 core  1132759DEBUG   ('38474119', 'CI.TOW2'): no pick/onset -> skip pair
+2022-11-15 10:54:27,620 core  1132759DEBUG   ('38474119', 'CI.WRC2'): no pick/onset -> skip pair
+2022-11-15 10:54:27,620 core  1132759DEBUG   ('38474119', 'CI.WBM'): no pick/onset -> skip pair
+2022-11-15 10:54:27,621 core  1132759DEBUG   ('38474119', 'CI.WCS2'): no pick/onset -> skip pair
+2022-11-15 10:54:27,621 core  1132759DEBUG   ('38474119', 'CI.DTP'): no pick/onset -> skip pair
+2022-11-15 10:54:27,621 core  1132759DEBUG   ('38474119', 'CI.WMF'): no pick/onset -> skip pair
+2022-11-15 10:54:27,621 core  1132759DEBUG   ('38474119', 'CI.WOR'): no pick/onset -> skip pair
+2022-11-15 10:54:27,621 core  1132759DEBUG   ('38474119', 'CI.DAW'): no pick/onset -> skip pair
+2022-11-15 10:54:27,621 core  1132759DEBUG   ('38474119', 'NN.QSM'): no pick/onset -> skip pair
+2022-11-15 10:54:27,622 core  1132759DEBUG   ('38474119', 'LB.DAC'): no pick/onset -> skip pair
+2022-11-15 10:54:27,622 core  1132759DEBUG   ('38474119', 'CI.HAR'): no pick/onset -> skip pair
+2022-11-15 10:54:27,623 core  1132759DEBUG   ('38474119', 'CI.WLH2'): no pick/onset -> skip pair
+2022-11-15 10:54:27,623 core  1132759DEBUG   ('38474119', 'CI.HYS'): no pick/onset -> skip pair
+2022-11-15 10:54:27,623 core  1132759DEBUG   ('38474119', 'CI.WAS2'): no pick/onset -> skip pair
+2022-11-15 10:54:27,623 core  1132759DEBUG   ('38474119', 'NN.GWY'): no pick/onset -> skip pair
+2022-11-15 10:54:27,623 core  1132759DEBUG   ('38474119', 'CI.CWC'): no pick/onset -> skip pair
+2022-11-15 10:54:27,624 core  1132759DEBUG   ('38474119', 'CI.CGO'): no pick/onset -> skip pair
+2022-11-15 10:54:27,624 core  1132759DEBUG   ('38474119', 'CI.FUR'): no pick/onset -> skip pair
+2022-11-15 10:54:27,624 core  1132759DEBUG   origin station distances: {('38474119', 'CI.SLA'): 33399.8987551134, ('38474119', 'CI.GSC'): 77166.27350275051, ('38474119', 'CI.CCC'): 23227.799427195245, ('38474119', 'CI.DAW'): 67342.1517491385, ('38474119', 'NN.QSM'): 67634.4675801826, ('38474119', 'CI.LDR'): 106762.73599288575, ('38474119', 'CI.DTP'): 54574.80988412515, ('38474119', 'CI.CLC'): 19462.36806080159, ('38474119', 'CI.WMF'): 58602.712399029486, ('38474119', 'CI.WRC2'): 33915.91014055894, ('38474119', 'CI.SRT'): 22824.102302699783, ('38474119', 'CI.WBM'): 35502.8686341443, ('38474119', 'CI.HAR'): 76526.9039504157, ('38474119', 'CI.EDW2'): 98267.34301414518, ('38474119', 'CI.WBS'): 58960.22999010841, ('38474119', 'CI.HYS'): 90109.5490366536, ('38474119', 'CI.TEH'): 92560.0328609451, ('38474119', 'CI.WCS2'): 45851.144511458544, ('38474119', 'CI.TOW2'): 28268.927044751952, ('38474119', 'CI.WAS2'): 94679.79262438207, ('38474119', 'CI.LRL'): 27462.942432005104, ('38474119', 'CI.LMR2'): 83934.95725216117, ('38474119', 'CI.WOR'): 66140.47624281331, ('38474119', 'LB.DAC'): 67960.5199431366, ('38474119', 'CI.ISA'): 86938.94238234099, ('38474119', 'CI.WLH2'): 89712.39861337729, ('38474119', 'CI.FUR'): 106468.282068304, ('38474119', 'CI.CCA'): 73822.96189466372, ('38474119', 'CI.CGO'): 101080.08503043694, ('38474119', 'CI.CWC'): 99411.06426164067, ('38474119', 'CI.MPM'): 43718.48070373136, ('38474119', 'CI.WHF'): 75957.5829966944, ('38474119', 'CI.JRC2'): 44104.491266611265, ('38474119', 'NN.GWY'): 95861.28001828454}
+2022-11-15 10:54:27,624 core  1132759DEBUG   onsets: {'P': {('38474119', 'CI.CLC'): UTCDateTime(2019, 7, 7, 9, 9, 28, 426000), ('38474119', 'CI.SRT'): UTCDateTime(2019, 7, 7, 9, 9, 29, 306000), ('38474119', 'CI.CCC'): UTCDateTime(2019, 7, 7, 9, 9, 29, 438000), ('38474119', 'CI.LRL'): UTCDateTime(2019, 7, 7, 9, 9, 29, 668000), ('38474119', 'CI.SLA'): UTCDateTime(2019, 7, 7, 9, 9, 30, 758000), ('38474119', 'CI.MPM'): UTCDateTime(2019, 7, 7, 9, 9, 32, 338000), ('38474119', 'CI.JRC2'): UTCDateTime(2019, 7, 7, 9, 9, 32, 558000), ('38474119', 'CI.WBS'): UTCDateTime(2019, 7, 7, 9, 9, 34, 818000), ('38474119', 'CI.CCA'): UTCDateTime(2019, 7, 7, 9, 9, 37, 348000), ('38474119', 'CI.WHF'): UTCDateTime(2019, 7, 7, 9, 9, 37, 528000), ('38474119', 'CI.GSC'): UTCDateTime(2019, 7, 7, 9, 9, 37, 914000), ('38474119', 'CI.LMR2'): UTCDateTime(2019, 7, 7, 9, 9, 38, 727000), ('38474119', 'CI.ISA'): UTCDateTime(2019, 7, 7, 9, 9, 39, 318000), ('38474119', 'CI.TEH'): UTCDateTime(2019, 7, 7, 9, 9, 39, 958000), ('38474119', 'CI.EDW2'): UTCDateTime(2019, 7, 7, 9, 9, 41, 14000), ('38474119', 'CI.CGO'): UTCDateTime(2019, 7, 7, 9, 9, 41, 855000), ('38474119', 'CI.LDR'): UTCDateTime(2019, 7, 7, 9, 9, 42, 647000)}, 'S': {('38474119', 'CI.CLC'): UTCDateTime(2019, 7, 7, 9, 9, 31, 128000), ('38474119', 'CI.SRT'): UTCDateTime(2019, 7, 7, 9, 9, 33, 14000), ('38474119', 'CI.CCC'): UTCDateTime(2019, 7, 7, 9, 9, 32, 687000), ('38474119', 'CI.LRL'): UTCDateTime(2019, 7, 7, 9, 9, 33, 168000), ('38474119', 'CI.SLA'): UTCDateTime(2019, 7, 7, 9, 9, 35, 288000), ('38474119', 'CI.MPM'): UTCDateTime(2019, 7, 7, 9, 9, 37, 865000), ('38474119', 'CI.JRC2'): UTCDateTime(2019, 7, 7, 9, 9, 37, 985000), ('38474119', 'CI.WBS'): UTCDateTime(2019, 7, 7, 9, 9, 42, 128000), ('38474119', 'CI.CCA'): UTCDateTime(2019, 7, 7, 9, 9, 45, 915000), ('38474119', 'CI.WHF'): UTCDateTime(2019, 7, 7, 9, 9, 46, 378000), ('38474119', 'CI.GSC'): UTCDateTime(2019, 7, 7, 9, 9, 47, 238000), ('38474119', 'CI.LMR2'): UTCDateTime(2019, 7, 7, 9, 9, 48, 618000), ('38474119', 'CI.ISA'): UTCDateTime(2019, 7, 7, 9, 9, 49, 588000), ('38474119', 'CI.TEH'): UTCDateTime(2019, 7, 7, 9, 9, 50, 725000), ('38474119', 'CI.EDW2'): UTCDateTime(2019, 7, 7, 9, 9, 52, 677000), ('38474119', 'CI.LDR'): UTCDateTime(2019, 7, 7, 9, 9, 55, 444000)}}
+2022-11-15 10:54:27,624 core  1132759INFO    16 pairs with determined onsets/picks
+2022-11-15 10:54:27,624 core  1132759DEBUG   ([('38474119', 'CI.CLC'), ('38474119', 'CI.SRT'), ('38474119', 'CI.CCC'), ('38474119', 'CI.LRL'), ('38474119', 'CI.SLA'), ('38474119', 'CI.MPM'), ('38474119', 'CI.JRC2'), ('38474119', 'CI.WBS'), ('38474119', 'CI.CCA'), ('38474119', 'CI.WHF'), ('38474119', 'CI.GSC'), ('38474119', 'CI.LMR2'), ('38474119', 'CI.ISA'), ('38474119', 'CI.TEH'), ('38474119', 'CI.EDW2'), ('38474119', 'CI.LDR')])
+2022-11-15 10:54:27,679 core  1132759INFO    succesfully fetched 16 streams for 34 stations and 1 events
+2022-11-15 10:54:27,679 core  1132759DEBUG   ([('38474119', 'CI.CLC'), ('38474119', 'CI.SRT'), ('38474119', 'CI.CCC'), ('38474119', 'CI.LRL'), ('38474119', 'CI.SLA'), ('38474119', 'CI.MPM'), ('38474119', 'CI.JRC2'), ('38474119', 'CI.WBS'), ('38474119', 'CI.CCA'), ('38474119', 'CI.WHF'), ('38474119', 'CI.GSC'), ('38474119', 'CI.LMR2'), ('38474119', 'CI.ISA'), ('38474119', 'CI.TEH'), ('38474119', 'CI.EDW2'), ('38474119', 'CI.LDR')])
+2022-11-15 10:54:27,679 warnings1132759WARNING /home/eule/anaconda/envs/eqspec/lib/python3.10/site-packages/obspy/core/inventory/inventory.py:451: UserWarning: Found more than one matching response. Returning first.
+  warnings.warn(msg)
+
+2022-11-15 10:54:27,684 core  1132759INFO    instrument correction (sensitivity) finished for 16 streams
+2022-11-15 10:54:27,685 core  1132759DEBUG   bandpass filter (0.5Hz-1Hz, 2 corners, zerophase=True, sr=100.0Hz) has a width of 0.42Hz
+2022-11-15 10:54:27,685 core  1132759DEBUG   bandpass filter (0.71Hz-1.4Hz, 2 corners, zerophase=True, sr=100.0Hz) has a width of 0.59Hz
+2022-11-15 10:54:27,685 core  1132759DEBUG   bandpass filter (1Hz-2Hz, 2 corners, zerophase=True, sr=100.0Hz) has a width of 0.83Hz
+2022-11-15 10:54:27,686 core  1132759DEBUG   bandpass filter (1.4Hz-2.8Hz, 2 corners, zerophase=True, sr=100.0Hz) has a width of 1.2Hz
+2022-11-15 10:54:27,686 core  1132759DEBUG   bandpass filter (2Hz-4Hz, 2 corners, zerophase=True, sr=100.0Hz) has a width of 1.7Hz
+2022-11-15 10:54:27,687 core  1132759DEBUG   bandpass filter (2.8Hz-5.6Hz, 2 corners, zerophase=True, sr=100.0Hz) has a width of 2.3Hz
+2022-11-15 10:54:27,687 core  1132759DEBUG   bandpass filter (4Hz-8Hz, 2 corners, zerophase=True, sr=100.0Hz) has a width of 3.3Hz
+2022-11-15 10:54:27,687 core  1132759DEBUG   bandpass filter (5.7Hz-11Hz, 2 corners, zerophase=True, sr=100.0Hz) has a width of 4.7Hz
+2022-11-15 10:54:27,688 core  1132759DEBUG   bandpass filter (8Hz-16Hz, 2 corners, zerophase=True, sr=100.0Hz) has a width of 6.7Hz
+2022-11-15 10:54:27,688 core  1132759DEBUG   bandpass filter (11Hz-23Hz, 2 corners, zerophase=True, sr=100.0Hz) has a width of 9.5Hz
+2022-11-15 10:54:27,688 core  1132759DEBUG   bandpass filter (16Hz-32Hz, 2 corners, zerophase=True, sr=100.0Hz) has a width of 13Hz
+2022-11-15 10:54:27,689 core  1132759DEBUG   bandpass filter (23Hz-45Hz, 2 corners, zerophase=True, sr=100.0Hz) has a width of 19Hz
+2022-11-15 10:54:27,689 core  1132759DEBUG   highpass filter (32Hz, 2 corners, zerophase=True, sr=100.0Hz) has a width of 15Hz
+2022-11-15 10:54:28,047 core  1132842DEBUG   freq band (0.50Hz, 1.00Hz): start optimization
+2022-11-15 10:54:28,081 core  1132843DEBUG   freq band (0.71Hz, 1.41Hz): start optimization
+2022-11-15 10:54:28,147 core  1132844DEBUG   freq band (1.00Hz, 2.00Hz): start optimization
+2022-11-15 10:54:28,351 core  1132845DEBUG   freq band (1.40Hz, 2.80Hz): start optimization
+2022-11-15 10:54:28,411 core  1132846DEBUG   freq band (2.00Hz, 4.00Hz): start optimization
+2022-11-15 10:54:28,454 core  1132847DEBUG   freq band (2.80Hz, 5.60Hz): start optimization
+2022-11-15 10:54:28,467 core  1132848DEBUG   freq band (4.00Hz, 8.00Hz): start optimization
+2022-11-15 10:54:28,661 core  1132849DEBUG   freq band (5.67Hz, 11.33Hz): start optimization
+2022-11-15 10:54:29,061 core  1132850DEBUG   freq band (8.00Hz, 16.00Hz): start optimization
+2022-11-15 10:54:29,069 core  1132851DEBUG   freq band (11.33Hz, 22.67Hz): start optimization
+2022-11-15 10:54:29,436 core  1132852DEBUG   freq band (16.00Hz, 32.00Hz): start optimization
+2022-11-15 10:54:29,620 core  1132853DEBUG   freq band (22.60Hz, 45.20Hz): start optimization
+2022-11-15 10:54:29,720 core  1132854DEBUG   freq band (32.00Hz, 64.00Hz): start optimization
+2022-11-15 10:54:30,191 core  1132842DEBUG   ('38474119', 'CI.CLC'): noise level at 3.8e-13, max value 6.3e-07
+2022-11-15 10:54:30,208 core  1132842DEBUG   ('38474119', 'CI.SRT'): noise level at 9.8e-11, max value 7.0e-06
+2022-11-15 10:54:30,215 core  1132842DEBUG   ('38474119', 'CI.CCC'): noise level at 6.4e-12, max value 1.6e-06
+2022-11-15 10:54:30,222 core  1132842DEBUG   ('38474119', 'CI.LRL'): noise level at 6.5e-13, max value 3.8e-08
+2022-11-15 10:54:30,230 core  1132842DEBUG   ('38474119', 'CI.SLA'): noise level at 1.4e-12, max value 9.5e-07
+2022-11-15 10:54:30,237 core  1132842DEBUG   ('38474119', 'CI.MPM'): noise level at 2.0e-13, max value 4.8e-07
+2022-11-15 10:54:30,245 core  1132842DEBUG   ('38474119', 'CI.JRC2'): noise level at 5.1e-13, max value 5.6e-06
+2022-11-15 10:54:30,252 core  1132842DEBUG   ('38474119', 'CI.WBS'): noise level at 5.5e-13, max value 4.2e-08
+2022-11-15 10:54:30,260 core  1132842DEBUG   ('38474119', 'CI.CCA'): noise level at 2.5e-12, max value 5.7e-08
+2022-11-15 10:54:30,269 core  1132842DEBUG   ('38474119', 'CI.WHF'): noise level at 2.0e-13, max value 1.5e-08
+2022-11-15 10:54:30,296 core  1132842DEBUG   ('38474119', 'CI.GSC'): noise level at 2.9e-13, max value 1.1e-07
+2022-11-15 10:54:30,319 core  1132842DEBUG   ('38474119', 'CI.LMR2'): noise level at 3.4e-13, max value 7.5e-09
+2022-11-15 10:54:30,326 core  1132842DEBUG   ('38474119', 'CI.ISA'): noise level at 7.5e-14, max value 6.1e-09
+2022-11-15 10:54:30,349 core  1132842DEBUG   ('38474119', 'CI.TEH'): noise level at 1.5e-13, max value 1.7e-08
+2022-11-15 10:54:30,360 core  1132842DEBUG   ('38474119', 'CI.EDW2'): noise level at 1.7e-13, max value 1.6e-08
+2022-11-15 10:54:30,379 core  1132842DEBUG   ('38474119', 'CI.LDR'): noise level at 7.9e-13, max value 1.5e-08
+2022-11-15 10:54:30,395 core  1132842DEBUG   ('38474119', 'CI.CLC'): bulk window (5.13s, 9.13s) coda window (9.13s, 56.13s)
+2022-11-15 10:54:30,399 core  1132842DEBUG   ('38474119', 'CI.CLC'): cut coda at local minimum detected at 18.95s.
+2022-11-15 10:54:30,440 core  1132842DEBUG   ('38474119', 'CI.SRT'): bulk window (7.01s, 11.01s) coda window (11.01s, 58.01s)
+2022-11-15 10:54:30,443 core  1132842DEBUG   ('38474119', 'CI.SRT'): cut coda at local minimum detected at 14.99s.
+2022-11-15 10:54:30,463 core  1132842DEBUG   ('38474119', 'CI.CCC'): bulk window (6.69s, 10.69s) coda window (10.69s, 57.69s)
+2022-11-15 10:54:30,466 core  1132842DEBUG   ('38474119', 'CI.CCC'): cut coda at local minimum detected at 36.14s.
+2022-11-15 10:54:30,483 core  1132842DEBUG   ('38474119', 'CI.LRL'): bulk window (7.17s, 11.17s) coda window (11.17s, 58.17s)
+2022-11-15 10:54:30,486 core  1132842DEBUG   ('38474119', 'CI.LRL'): cut coda at local minimum detected at 10.67s.
+2022-11-15 10:54:30,486 core  1132842DEBUG   ('38474119', 'CI.LRL'): coda window of length 0.0s shorter than 2.0 -> skip pair
+2022-11-15 10:54:30,518 core  1132842DEBUG   ('38474119', 'CI.SLA'): bulk window (9.29s, 13.29s) coda window (13.29s, 60.29s)
+2022-11-15 10:54:30,521 core  1132842DEBUG   ('38474119', 'CI.SLA'): cut coda at local minimum detected at 34.99s.
+2022-11-15 10:54:30,548 core  1132842DEBUG   ('38474119', 'CI.MPM'): bulk window (11.87s, 15.87s) coda window (15.87s, 62.87s)
+2022-11-15 10:54:30,550 core  1132842DEBUG   ('38474119', 'CI.MPM'): cut coda at local minimum detected at 31.21s.
+2022-11-15 10:54:30,576 core  1132842DEBUG   ('38474119', 'CI.JRC2'): bulk window (11.98s, 15.98s) coda window (15.98s, 62.98s)
+2022-11-15 10:54:30,581 core  1132842DEBUG   ('38474119', 'CI.JRC2'): cut coda at local minimum detected at 22.26s.
+2022-11-15 10:54:30,589 core  1132842DEBUG   ('38474119', 'CI.WBS'): bulk window (16.13s, 20.13s) coda window (20.13s, 67.13s)
+2022-11-15 10:54:30,602 core  1132842DEBUG   ('38474119', 'CI.WBS'): cut coda at local minimum detected at 28.63s.
+2022-11-15 10:54:30,641 core  1132842DEBUG   ('38474119', 'CI.CCA'): bulk window (19.91s, 23.91s) coda window (23.91s, 70.92s)
+2022-11-15 10:54:30,644 core  1132842DEBUG   ('38474119', 'CI.CCA'): cut coda at local minimum detected at 33.42s.
+2022-11-15 10:54:30,674 core  1132842DEBUG   ('38474119', 'CI.WHF'): bulk window (20.38s, 24.38s) coda window (24.38s, 71.38s)
+2022-11-15 10:54:30,678 core  1132842DEBUG   ('38474119', 'CI.WHF'): cut coda at local minimum detected at 29.99s.
+2022-11-15 10:54:30,708 core  1132842DEBUG   ('38474119', 'CI.GSC'): bulk window (21.24s, 25.24s) coda window (25.24s, 72.24s)
+2022-11-15 10:54:30,711 core  1132842DEBUG   ('38474119', 'CI.GSC'): cut coda at local minimum detected at 31.45s.
+2022-11-15 10:54:30,734 core  1132842DEBUG   ('38474119', 'CI.LMR2'): bulk window (22.62s, 26.62s) coda window (26.62s, 73.62s)
+2022-11-15 10:54:30,735 core  1132844DEBUG   ('38474119', 'CI.CLC'): noise level at 1.5e-13, max value 6.2e-07
+2022-11-15 10:54:30,747 core  1132842DEBUG   ('38474119', 'CI.LMR2'): cut coda at local minimum detected at 38.96s.
+2022-11-15 10:54:30,754 core  1132844DEBUG   ('38474119', 'CI.SRT'): noise level at 1.7e-11, max value 3.0e-06
+2022-11-15 10:54:30,776 core  1132842DEBUG   ('38474119', 'CI.ISA'): bulk window (23.59s, 27.59s) coda window (27.59s, 74.59s)
+2022-11-15 10:54:30,779 core  1132842DEBUG   ('38474119', 'CI.ISA'): cut coda at local minimum detected at 42.61s.
+2022-11-15 10:54:30,781 core  1132844DEBUG   ('38474119', 'CI.CCC'): noise level at 2.2e-12, max value 3.9e-06
+2022-11-15 10:54:30,804 core  1132842DEBUG   ('38474119', 'CI.TEH'): bulk window (24.73s, 28.73s) coda window (28.73s, 75.72s)
+2022-11-15 10:54:30,805 core  1132844DEBUG   ('38474119', 'CI.LRL'): noise level at 1.2e-13, max value 1.5e-07
+2022-11-15 10:54:30,807 core  1132842DEBUG   ('38474119', 'CI.TEH'): cut coda at local minimum detected at 32.83s.
+2022-11-15 10:54:30,830 core  1132844DEBUG   ('38474119', 'CI.SLA'): noise level at 1.1e-12, max value 7.3e-06
+2022-11-15 10:54:30,834 core  1132842DEBUG   ('38474119', 'CI.EDW2'): bulk window (26.68s, 30.68s) coda window (30.68s, 77.68s)
+2022-11-15 10:54:30,837 core  1132842DEBUG   ('38474119', 'CI.EDW2'): cut coda at local minimum detected at 32.71s.
+2022-11-15 10:54:30,880 core  1132842DEBUG   ('38474119', 'CI.LDR'): bulk window (29.44s, 33.44s) coda window (33.44s, 80.44s)
+2022-11-15 10:54:30,888 core  1132842DEBUG   ('38474119', 'CI.LDR'): cut coda at local minimum detected at 39.01s.
+2022-11-15 10:54:30,890 core  1132844DEBUG   ('38474119', 'CI.MPM'): noise level at 1.2e-13, max value 1.2e-06
+2022-11-15 10:54:30,927 core  1132844DEBUG   ('38474119', 'CI.JRC2'): noise level at 2.0e-12, max value 1.4e-04
+2022-11-15 10:54:30,957 core  1132844DEBUG   ('38474119', 'CI.WBS'): noise level at 3.1e-13, max value 1.5e-07
+2022-11-15 10:54:31,005 core  1132844DEBUG   ('38474119', 'CI.CCA'): noise level at 2.9e-13, max value 2.4e-08
+2022-11-15 10:54:31,193 core  1132844DEBUG   ('38474119', 'CI.WHF'): noise level at 9.4e-14, max value 1.3e-07
+2022-11-15 10:54:31,236 core  1132844DEBUG   ('38474119', 'CI.GSC'): noise level at 1.3e-13, max value 2.0e-07
+2022-11-15 10:54:31,282 core  1132844DEBUG   ('38474119', 'CI.LMR2'): noise level at 1.4e-13, max value 2.0e-08
+2022-11-15 10:54:31,369 core  1132844DEBUG   ('38474119', 'CI.ISA'): noise level at 5.5e-14, max value 1.8e-08
+2022-11-15 10:54:31,425 core  1132844DEBUG   ('38474119', 'CI.TEH'): noise level at 4.1e-14, max value 1.6e-08
+2022-11-15 10:54:31,483 core  1132844DEBUG   ('38474119', 'CI.EDW2'): noise level at 3.2e-14, max value 1.5e-08
+2022-11-15 10:54:31,520 core  1132844DEBUG   ('38474119', 'CI.LDR'): noise level at 7.3e-13, max value 1.4e-08
+2022-11-15 10:54:31,594 core  1132844DEBUG   ('38474119', 'CI.CLC'): bulk window (5.13s, 9.13s) coda window (9.13s, 56.13s)
+2022-11-15 10:54:31,618 core  1132844DEBUG   ('38474119', 'CI.CLC'): cut coda at local minimum detected at 35.02s.
+2022-11-15 10:54:31,693 core  1132844DEBUG   ('38474119', 'CI.SRT'): bulk window (7.01s, 11.01s) coda window (11.01s, 58.01s)
+2022-11-15 10:54:31,738 core  1132844DEBUG   ('38474119', 'CI.SRT'): cut coda at local minimum detected at 20.97s.
+2022-11-15 10:54:31,785 core  1132844DEBUG   ('38474119', 'CI.CCC'): bulk window (6.69s, 10.69s) coda window (10.69s, 57.69s)
+2022-11-15 10:54:31,815 core  1132844DEBUG   ('38474119', 'CI.CCC'): cut coda at local minimum detected at 10.30s.
+2022-11-15 10:54:31,815 core  1132844DEBUG   ('38474119', 'CI.CCC'): coda window of length 0.0s shorter than 2.0 -> skip pair
+2022-11-15 10:54:31,822 core  1132844DEBUG   ('38474119', 'CI.LRL'): bulk window (7.17s, 11.17s) coda window (11.17s, 58.17s)
+2022-11-15 10:54:31,914 core  1132844DEBUG   ('38474119', 'CI.LRL'): cut coda at local minimum detected at 25.70s.
+2022-11-15 10:54:31,986 core  1132844DEBUG   ('38474119', 'CI.SLA'): bulk window (9.29s, 13.29s) coda window (13.29s, 60.29s)
+2022-11-15 10:54:32,025 core  1132844DEBUG   ('38474119', 'CI.SLA'): cut coda at local minimum detected at 14.09s.
+2022-11-15 10:54:32,025 core  1132844DEBUG   ('38474119', 'CI.SLA'): coda window of length 0.8s shorter than 2.0 -> skip pair
+2022-11-15 10:54:32,072 core  1132849DEBUG   ('38474119', 'CI.CLC'): noise level at 6.7e-13, max value 3.8e-06
+2022-11-15 10:54:32,076 core  1132844DEBUG   ('38474119', 'CI.MPM'): bulk window (11.87s, 15.87s) coda window (15.87s, 62.87s)
+2022-11-15 10:54:32,079 core  1132844DEBUG   ('38474119', 'CI.MPM'): cut coda at local minimum detected at 30.61s.
+2022-11-15 10:54:32,115 core  1132844DEBUG   ('38474119', 'CI.JRC2'): bulk window (11.98s, 15.98s) coda window (15.98s, 62.98s)
+2022-11-15 10:54:32,117 core  1132849DEBUG   ('38474119', 'CI.SRT'): noise level at 3.6e-13, max value 8.5e-07
+2022-11-15 10:54:32,118 core  1132844DEBUG   ('38474119', 'CI.JRC2'): cut coda at local minimum detected at 29.53s.
+2022-11-15 10:54:32,168 core  1132849DEBUG   ('38474119', 'CI.CCC'): noise level at 4.6e-12, max value 5.4e-06
+2022-11-15 10:54:32,243 core  1132844DEBUG   ('38474119', 'CI.WBS'): bulk window (16.13s, 20.13s) coda window (20.13s, 67.13s)
+2022-11-15 10:54:32,292 core  1132849DEBUG   ('38474119', 'CI.LRL'): noise level at 2.3e-12, max value 2.3e-06
+2022-11-15 10:54:32,299 core  1132843DEBUG   ('38474119', 'CI.CLC'): noise level at 1.9e-13, max value 7.0e-07
+2022-11-15 10:54:32,313 core  1132843DEBUG   ('38474119', 'CI.SRT'): noise level at 3.9e-11, max value 5.3e-06
+2022-11-15 10:54:32,315 core  1132844DEBUG   ('38474119', 'CI.WBS'): cut coda at local minimum detected at 25.01s.
+2022-11-15 10:54:32,320 core  1132843DEBUG   ('38474119', 'CI.CCC'): noise level at 2.8e-12, max value 2.1e-06
+2022-11-15 10:54:32,323 core  1132844DEBUG   ('38474119', 'CI.CCA'): bulk window (19.91s, 23.91s) coda window (23.91s, 70.92s)
+2022-11-15 10:54:32,328 core  1132843DEBUG   ('38474119', 'CI.LRL'): noise level at 2.2e-13, max value 7.4e-08
+2022-11-15 10:54:32,332 core  1132844DEBUG   ('38474119', 'CI.CCA'): cut coda at local minimum detected at 50.65s.
+2022-11-15 10:54:32,335 core  1132843DEBUG   ('38474119', 'CI.SLA'): noise level at 8.1e-13, max value 3.2e-06
+2022-11-15 10:54:32,338 core  1132846DEBUG   ('38474119', 'CI.CLC'): noise level at 1.6e-13, max value 1.6e-06
+2022-11-15 10:54:32,342 core  1132844DEBUG   ('38474119', 'CI.WHF'): bulk window (20.38s, 24.38s) coda window (24.38s, 71.38s)
+2022-11-15 10:54:32,342 core  1132843DEBUG   ('38474119', 'CI.MPM'): noise level at 1.7e-13, max value 1.2e-06
+2022-11-15 10:54:32,346 core  1132844DEBUG   ('38474119', 'CI.WHF'): cut coda at local minimum detected at 34.03s.
+2022-11-15 10:54:32,348 core  1132846DEBUG   ('38474119', 'CI.SRT'): noise level at 2.0e-12, max value 4.7e-06
+2022-11-15 10:54:32,350 core  1132843DEBUG   ('38474119', 'CI.JRC2'): noise level at 9.4e-13, max value 4.8e-05
+2022-11-15 10:54:32,355 core  1132844DEBUG   ('38474119', 'CI.GSC'): bulk window (21.24s, 25.24s) coda window (25.24s, 72.24s)
+2022-11-15 10:54:32,355 core  1132846DEBUG   ('38474119', 'CI.CCC'): noise level at 3.4e-12, max value 4.8e-06
+2022-11-15 10:54:32,356 core  1132849DEBUG   ('38474119', 'CI.SLA'): noise level at 4.0e-12, max value 3.5e-06
+2022-11-15 10:54:32,358 core  1132843DEBUG   ('38474119', 'CI.WBS'): noise level at 2.8e-13, max value 8.4e-08
+2022-11-15 10:54:32,358 core  1132844DEBUG   ('38474119', 'CI.GSC'): cut coda at local minimum detected at 34.86s.
+2022-11-15 10:54:32,363 core  1132846DEBUG   ('38474119', 'CI.LRL'): noise level at 4.4e-13, max value 9.1e-07
+2022-11-15 10:54:32,367 core  1132844DEBUG   ('38474119', 'CI.LMR2'): bulk window (22.62s, 26.62s) coda window (26.62s, 73.62s)
+2022-11-15 10:54:32,367 core  1132843DEBUG   ('38474119', 'CI.CCA'): noise level at 6.9e-13, max value 5.4e-08
+2022-11-15 10:54:32,370 core  1132844DEBUG   ('38474119', 'CI.LMR2'): cut coda at local minimum detected at 30.09s.
+2022-11-15 10:54:32,371 core  1132846DEBUG   ('38474119', 'CI.SLA'): noise level at 5.4e-12, max value 3.4e-06
+2022-11-15 10:54:32,377 core  1132843DEBUG   ('38474119', 'CI.WHF'): noise level at 6.3e-14, max value 4.5e-08
+2022-11-15 10:54:32,379 core  1132844DEBUG   ('38474119', 'CI.ISA'): bulk window (23.59s, 27.59s) coda window (27.59s, 74.59s)
+2022-11-15 10:54:32,383 core  1132844DEBUG   ('38474119', 'CI.ISA'): cut coda at local minimum detected at 30.02s.
+2022-11-15 10:54:32,398 core  1132843DEBUG   ('38474119', 'CI.GSC'): noise level at 8.9e-14, max value 2.0e-07
+2022-11-15 10:54:32,403 core  1132846DEBUG   ('38474119', 'CI.MPM'): noise level at 1.2e-13, max value 5.5e-07
+2022-11-15 10:54:32,404 core  1132844DEBUG   ('38474119', 'CI.TEH'): bulk window (24.73s, 28.73s) coda window (28.73s, 75.72s)
+2022-11-15 10:54:32,408 core  1132843DEBUG   ('38474119', 'CI.LMR2'): noise level at 2.1e-13, max value 1.5e-08
+2022-11-15 10:54:32,415 core  1132846DEBUG   ('38474119', 'CI.JRC2'): noise level at 2.1e-12, max value 4.7e-05
+2022-11-15 10:54:32,415 core  1132844DEBUG   ('38474119', 'CI.TEH'): cut coda at local minimum detected at 49.40s.
+2022-11-15 10:54:32,417 core  1132843DEBUG   ('38474119', 'CI.ISA'): noise level at 3.6e-14, max value 1.2e-08
+2022-11-15 10:54:32,423 core  1132846DEBUG   ('38474119', 'CI.WBS'): noise level at 1.1e-12, max value 6.2e-07
+2022-11-15 10:54:32,424 core  1132844DEBUG   ('38474119', 'CI.EDW2'): bulk window (26.68s, 30.68s) coda window (30.68s, 77.68s)
+2022-11-15 10:54:32,425 core  1132843DEBUG   ('38474119', 'CI.TEH'): noise level at 6.5e-14, max value 2.6e-08
+2022-11-15 10:54:32,427 core  1132849DEBUG   ('38474119', 'CI.MPM'): noise level at 8.9e-14, max value 1.1e-07
+2022-11-15 10:54:32,432 core  1132846DEBUG   ('38474119', 'CI.CCA'): noise level at 2.0e-13, max value 1.9e-07
+2022-11-15 10:54:32,433 core  1132843DEBUG   ('38474119', 'CI.EDW2'): noise level at 8.6e-14, max value 2.1e-08
+2022-11-15 10:54:32,440 core  1132844DEBUG   ('38474119', 'CI.EDW2'): cut coda at local minimum detected at 32.68s.
+2022-11-15 10:54:32,440 core  1132843DEBUG   ('38474119', 'CI.LDR'): noise level at 5.5e-13, max value 1.7e-08
+2022-11-15 10:54:32,442 core  1132846DEBUG   ('38474119', 'CI.WHF'): noise level at 7.3e-13, max value 1.1e-06
+2022-11-15 10:54:32,443 core  1132845DEBUG   ('38474119', 'CI.CLC'): noise level at 1.4e-13, max value 5.5e-07
+2022-11-15 10:54:32,450 core  1132843DEBUG   ('38474119', 'CI.CLC'): bulk window (5.13s, 9.13s) coda window (9.13s, 56.13s)
+2022-11-15 10:54:32,450 core  1132846DEBUG   ('38474119', 'CI.GSC'): noise level at 1.2e-13, max value 6.2e-08
+2022-11-15 10:54:32,453 core  1132845DEBUG   ('38474119', 'CI.SRT'): noise level at 5.7e-12, max value 1.0e-06
+2022-11-15 10:54:32,454 core  1132843DEBUG   ('38474119', 'CI.CLC'): cut coda at local minimum detected at 26.49s.
+2022-11-15 10:54:32,456 core  1132849DEBUG   ('38474119', 'CI.JRC2'): noise level at 2.3e-12, max value 1.7e-04
+2022-11-15 10:54:32,456 core  1132844DEBUG   ('38474119', 'CI.LDR'): bulk window (29.44s, 33.44s) coda window (33.44s, 80.44s)
+2022-11-15 10:54:32,458 core  1132846DEBUG   ('38474119', 'CI.LMR2'): noise level at 7.4e-14, max value 2.4e-08
+2022-11-15 10:54:32,460 core  1132844DEBUG   ('38474119', 'CI.LDR'): cut coda at local minimum detected at 47.31s.
+2022-11-15 10:54:32,461 core  1132845DEBUG   ('38474119', 'CI.CCC'): noise level at 2.4e-12, max value 4.8e-06
+2022-11-15 10:54:32,464 core  1132843DEBUG   ('38474119', 'CI.SRT'): bulk window (7.01s, 11.01s) coda window (11.01s, 58.01s)
+2022-11-15 10:54:32,467 core  1132846DEBUG   ('38474119', 'CI.ISA'): noise level at 1.4e-13, max value 1.1e-07
+2022-11-15 10:54:32,468 core  1132843DEBUG   ('38474119', 'CI.SRT'): cut coda at local minimum detected at 20.61s.
+2022-11-15 10:54:32,469 core  1132845DEBUG   ('38474119', 'CI.LRL'): noise level at 2.1e-13, max value 2.7e-07
+2022-11-15 10:54:32,475 core  1132846DEBUG   ('38474119', 'CI.TEH'): noise level at 5.3e-14, max value 1.3e-07
+2022-11-15 10:54:32,477 core  1132845DEBUG   ('38474119', 'CI.SLA'): noise level at 2.8e-12, max value 7.7e-06
+2022-11-15 10:54:32,478 core  1132843DEBUG   ('38474119', 'CI.CCC'): bulk window (6.69s, 10.69s) coda window (10.69s, 57.69s)
+2022-11-15 10:54:32,481 core  1132843DEBUG   ('38474119', 'CI.CCC'): cut coda at local minimum detected at 10.19s.
+2022-11-15 10:54:32,481 core  1132843DEBUG   ('38474119', 'CI.CCC'): coda window of length 0.0s shorter than 2.0 -> skip pair
+2022-11-15 10:54:32,484 core  1132846DEBUG   ('38474119', 'CI.EDW2'): noise level at 2.0e-14, max value 1.2e-08
+2022-11-15 10:54:32,485 core  1132845DEBUG   ('38474119', 'CI.MPM'): noise level at 1.2e-13, max value 8.8e-07
+2022-11-15 10:54:32,489 core  1132843DEBUG   ('38474119', 'CI.LRL'): bulk window (7.17s, 11.17s) coda window (11.17s, 58.17s)
+2022-11-15 10:54:32,492 core  1132846DEBUG   ('38474119', 'CI.LDR'): noise level at 5.4e-12, max value 7.6e-08
+2022-11-15 10:54:32,492 core  1132843DEBUG   ('38474119', 'CI.LRL'): cut coda at local minimum detected at 11.53s.
+2022-11-15 10:54:32,492 core  1132843DEBUG   ('38474119', 'CI.LRL'): coda window of length 0.4s shorter than 2.0 -> skip pair
+2022-11-15 10:54:32,493 core  1132845DEBUG   ('38474119', 'CI.JRC2'): noise level at 3.3e-12, max value 1.4e-04
+2022-11-15 10:54:32,499 core  1132846DEBUG   ('38474119', 'CI.CLC'): bulk window (5.13s, 9.13s) coda window (9.13s, 56.13s)
+2022-11-15 10:54:32,499 core  1132843DEBUG   ('38474119', 'CI.SLA'): bulk window (9.29s, 13.29s) coda window (13.29s, 60.29s)
+2022-11-15 10:54:32,503 core  1132846DEBUG   ('38474119', 'CI.CLC'): cut coda at local minimum detected at 34.76s.
+2022-11-15 10:54:32,503 core  1132843DEBUG   ('38474119', 'CI.SLA'): cut coda at local minimum detected at 25.10s.
+2022-11-15 10:54:32,512 core  1132846DEBUG   ('38474119', 'CI.SRT'): bulk window (7.01s, 11.01s) coda window (11.01s, 58.01s)
+2022-11-15 10:54:32,512 core  1132843DEBUG   ('38474119', 'CI.MPM'): bulk window (11.87s, 15.87s) coda window (15.87s, 62.87s)
+2022-11-15 10:54:32,513 core  1132845DEBUG   ('38474119', 'CI.WBS'): noise level at 8.2e-13, max value 2.6e-07
+2022-11-15 10:54:32,515 core  1132846DEBUG   ('38474119', 'CI.SRT'): cut coda at local minimum detected at 39.74s.
+2022-11-15 10:54:32,516 core  1132843DEBUG   ('38474119', 'CI.MPM'): cut coda at local minimum detected at 29.20s.
+2022-11-15 10:54:32,521 core  1132845DEBUG   ('38474119', 'CI.CCA'): noise level at 2.2e-13, max value 7.5e-08
+2022-11-15 10:54:32,524 core  1132846DEBUG   ('38474119', 'CI.CCC'): bulk window (6.69s, 10.69s) coda window (10.69s, 57.69s)
+2022-11-15 10:54:32,525 core  1132843DEBUG   ('38474119', 'CI.JRC2'): bulk window (11.98s, 15.98s) coda window (15.98s, 62.98s)
+2022-11-15 10:54:32,528 core  1132846DEBUG   ('38474119', 'CI.CCC'): cut coda at local minimum detected at 40.36s.
+2022-11-15 10:54:32,528 core  1132843DEBUG   ('38474119', 'CI.JRC2'): cut coda at local minimum detected at 21.74s.
+2022-11-15 10:54:32,536 core  1132846DEBUG   ('38474119', 'CI.LRL'): bulk window (7.17s, 11.17s) coda window (11.17s, 58.17s)
+2022-11-15 10:54:32,539 core  1132843DEBUG   ('38474119', 'CI.WBS'): bulk window (16.13s, 20.13s) coda window (20.13s, 67.13s)
+2022-11-15 10:54:32,540 core  1132846DEBUG   ('38474119', 'CI.LRL'): cut coda at local minimum detected at 37.54s.
+2022-11-15 10:54:32,541 core  1132845DEBUG   ('38474119', 'CI.WHF'): noise level at 4.3e-13, max value 5.6e-07
+2022-11-15 10:54:32,542 core  1132843DEBUG   ('38474119', 'CI.WBS'): cut coda at local minimum detected at 25.02s.
+2022-11-15 10:54:32,549 core  1132846DEBUG   ('38474119', 'CI.SLA'): bulk window (9.29s, 13.29s) coda window (13.29s, 60.29s)
+2022-11-15 10:54:32,552 core  1132843DEBUG   ('38474119', 'CI.CCA'): bulk window (19.91s, 23.91s) coda window (23.91s, 70.92s)
+2022-11-15 10:54:32,552 core  1132846DEBUG   ('38474119', 'CI.SLA'): cut coda at local minimum detected at 33.99s.
+2022-11-15 10:54:32,556 core  1132843DEBUG   ('38474119', 'CI.CCA'): cut coda at local minimum detected at 42.06s.
+2022-11-15 10:54:32,558 core  1132845DEBUG   ('38474119', 'CI.GSC'): noise level at 1.7e-13, max value 8.8e-08
+2022-11-15 10:54:32,561 core  1132846DEBUG   ('38474119', 'CI.MPM'): bulk window (11.87s, 15.87s) coda window (15.87s, 62.87s)
+2022-11-15 10:54:32,564 core  1132846DEBUG   ('38474119', 'CI.MPM'): cut coda at local minimum detected at 38.06s.
+2022-11-15 10:54:32,565 core  1132843DEBUG   ('38474119', 'CI.WHF'): bulk window (20.38s, 24.38s) coda window (24.38s, 71.38s)
+2022-11-15 10:54:32,568 core  1132843DEBUG   ('38474119', 'CI.WHF'): cut coda at local minimum detected at 39.21s.
+2022-11-15 10:54:32,573 core  1132846DEBUG   ('38474119', 'CI.JRC2'): bulk window (11.98s, 15.98s) coda window (15.98s, 62.98s)
+2022-11-15 10:54:32,573 core  1132849DEBUG   ('38474119', 'CI.WBS'): noise level at 1.8e-12, max value 2.3e-07
+2022-11-15 10:54:32,577 core  1132846DEBUG   ('38474119', 'CI.JRC2'): cut coda at local minimum detected at 36.18s.
+2022-11-15 10:54:32,577 core  1132845DEBUG   ('38474119', 'CI.LMR2'): noise level at 9.4e-14, max value 2.1e-08
+2022-11-15 10:54:32,577 core  1132843DEBUG   ('38474119', 'CI.GSC'): bulk window (21.24s, 25.24s) coda window (25.24s, 72.24s)
+2022-11-15 10:54:32,580 core  1132843DEBUG   ('38474119', 'CI.GSC'): cut coda at local minimum detected at 25.74s.
+2022-11-15 10:54:32,580 core  1132843DEBUG   ('38474119', 'CI.GSC'): coda window of length 0.5s shorter than 2.0 -> skip pair
+2022-11-15 10:54:32,586 core  1132846DEBUG   ('38474119', 'CI.WBS'): bulk window (16.13s, 20.13s) coda window (20.13s, 67.13s)
+2022-11-15 10:54:32,586 core  1132843DEBUG   ('38474119', 'CI.LMR2'): bulk window (22.62s, 26.62s) coda window (26.62s, 73.62s)
+2022-11-15 10:54:32,589 core  1132846DEBUG   ('38474119', 'CI.WBS'): cut coda at local minimum detected at 43.22s.
+2022-11-15 10:54:32,589 core  1132843DEBUG   ('38474119', 'CI.LMR2'): cut coda at local minimum detected at 38.98s.
+2022-11-15 10:54:32,594 core  1132845DEBUG   ('38474119', 'CI.ISA'): noise level at 1.2e-13, max value 2.9e-08
+2022-11-15 10:54:32,598 core  1132846DEBUG   ('38474119', 'CI.CCA'): bulk window (19.91s, 23.91s) coda window (23.91s, 70.92s)
+2022-11-15 10:54:32,599 core  1132843DEBUG   ('38474119', 'CI.ISA'): bulk window (23.59s, 27.59s) coda window (27.59s, 74.59s)
+2022-11-15 10:54:32,602 core  1132846DEBUG   ('38474119', 'CI.CCA'): cut coda at local minimum detected at 33.76s.
+2022-11-15 10:54:32,602 core  1132843DEBUG   ('38474119', 'CI.ISA'): cut coda at local minimum detected at 32.67s.
+2022-11-15 10:54:32,611 core  1132843DEBUG   ('38474119', 'CI.TEH'): bulk window (24.73s, 28.73s) coda window (28.73s, 75.72s)
+2022-11-15 10:54:32,612 core  1132846DEBUG   ('38474119', 'CI.WHF'): bulk window (20.38s, 24.38s) coda window (24.38s, 71.38s)
+2022-11-15 10:54:32,602 core  1132845DEBUG   ('38474119', 'CI.TEH'): noise level at 4.7e-14, max value 4.3e-08
+2022-11-15 10:54:32,614 core  1132843DEBUG   ('38474119', 'CI.TEH'): cut coda at local minimum detected at 41.32s.
+2022-11-15 10:54:32,616 core  1132846DEBUG   ('38474119', 'CI.WHF'): cut coda at local minimum detected at 42.39s.
+2022-11-15 10:54:32,621 core  1132845DEBUG   ('38474119', 'CI.EDW2'): noise level at 2.9e-14, max value 1.0e-08
+2022-11-15 10:54:32,622 core  1132843DEBUG   ('38474119', 'CI.EDW2'): bulk window (26.68s, 30.68s) coda window (30.68s, 77.68s)
+2022-11-15 10:54:32,625 core  1132846DEBUG   ('38474119', 'CI.GSC'): bulk window (21.24s, 25.24s) coda window (25.24s, 72.24s)
+2022-11-15 10:54:32,625 core  1132843DEBUG   ('38474119', 'CI.EDW2'): cut coda at local minimum detected at 32.83s.
+2022-11-15 10:54:32,628 core  1132846DEBUG   ('38474119', 'CI.GSC'): cut coda at local minimum detected at 37.19s.
+2022-11-15 10:54:32,633 core  1132843DEBUG   ('38474119', 'CI.LDR'): bulk window (29.44s, 33.44s) coda window (33.44s, 80.44s)
+2022-11-15 10:54:32,637 core  1132843DEBUG   ('38474119', 'CI.LDR'): cut coda at local minimum detected at 46.72s.
+2022-11-15 10:54:32,638 core  1132846DEBUG   ('38474119', 'CI.LMR2'): bulk window (22.62s, 26.62s) coda window (26.62s, 73.62s)
+2022-11-15 10:54:32,638 core  1132845DEBUG   ('38474119', 'CI.LDR'): noise level at 3.4e-12, max value 3.0e-08
+2022-11-15 10:54:32,641 core  1132846DEBUG   ('38474119', 'CI.LMR2'): cut coda at local minimum detected at 29.93s.
+2022-11-15 10:54:32,650 core  1132846DEBUG   ('38474119', 'CI.ISA'): bulk window (23.59s, 27.59s) coda window (27.59s, 74.59s)
+2022-11-15 10:54:32,654 core  1132846DEBUG   ('38474119', 'CI.ISA'): cut coda at local minimum detected at 48.32s.
+2022-11-15 10:54:32,656 core  1132845DEBUG   ('38474119', 'CI.CLC'): bulk window (5.13s, 9.13s) coda window (9.13s, 56.13s)
+2022-11-15 10:54:32,659 core  1132845DEBUG   ('38474119', 'CI.CLC'): cut coda at local minimum detected at 23.18s.
+2022-11-15 10:54:32,663 core  1132846DEBUG   ('38474119', 'CI.TEH'): bulk window (24.73s, 28.73s) coda window (28.73s, 75.72s)
+2022-11-15 10:54:32,665 core  1132849DEBUG   ('38474119', 'CI.CCA'): noise level at 3.1e-13, max value 8.7e-09
+2022-11-15 10:54:32,667 core  1132846DEBUG   ('38474119', 'CI.TEH'): cut coda at local minimum detected at 49.57s.
+2022-11-15 10:54:32,676 core  1132846DEBUG   ('38474119', 'CI.EDW2'): bulk window (26.68s, 30.68s) coda window (30.68s, 77.68s)
+2022-11-15 10:54:32,677 core  1132845DEBUG   ('38474119', 'CI.SRT'): bulk window (7.01s, 11.01s) coda window (11.01s, 58.01s)
+2022-11-15 10:54:32,679 core  1132846DEBUG   ('38474119', 'CI.EDW2'): cut coda at local minimum detected at 52.84s.
+2022-11-15 10:54:32,681 core  1132845DEBUG   ('38474119', 'CI.SRT'): cut coda at local minimum detected at 26.86s.
+2022-11-15 10:54:32,689 core  1132846DEBUG   ('38474119', 'CI.LDR'): bulk window (29.44s, 33.44s) coda window (33.44s, 80.44s)
+2022-11-15 10:54:32,692 core  1132846DEBUG   ('38474119', 'CI.LDR'): cut coda at local minimum detected at 53.86s.
+2022-11-15 10:54:32,701 core  1132845DEBUG   ('38474119', 'CI.CCC'): bulk window (6.69s, 10.69s) coda window (10.69s, 57.69s)
+2022-11-15 10:54:32,713 core  1132845DEBUG   ('38474119', 'CI.CCC'): cut coda at local minimum detected at 40.34s.
+2022-11-15 10:54:32,730 core  1132845DEBUG   ('38474119', 'CI.LRL'): bulk window (7.17s, 11.17s) coda window (11.17s, 58.17s)
+2022-11-15 10:54:32,734 core  1132845DEBUG   ('38474119', 'CI.LRL'): cut coda at local minimum detected at 25.10s.
+2022-11-15 10:54:32,743 core  1132845DEBUG   ('38474119', 'CI.SLA'): bulk window (9.29s, 13.29s) coda window (13.29s, 60.29s)
+2022-11-15 10:54:32,746 core  1132845DEBUG   ('38474119', 'CI.SLA'): cut coda at local minimum detected at 25.60s.
+2022-11-15 10:54:32,763 core  1132849DEBUG   ('38474119', 'CI.WHF'): noise level at 3.2e-13, max value 8.5e-07
+2022-11-15 10:54:32,811 core  1132845DEBUG   ('38474119', 'CI.MPM'): bulk window (11.87s, 15.87s) coda window (15.87s, 62.87s)
+2022-11-15 10:54:32,815 core  1132845DEBUG   ('38474119', 'CI.MPM'): cut coda at local minimum detected at 37.98s.
+2022-11-15 10:54:32,851 core  1132845DEBUG   ('38474119', 'CI.JRC2'): bulk window (11.98s, 15.98s) coda window (15.98s, 62.98s)
+2022-11-15 10:54:32,854 core  1132845DEBUG   ('38474119', 'CI.JRC2'): cut coda at local minimum detected at 29.58s.
+2022-11-15 10:54:32,886 core  1132849DEBUG   ('38474119', 'CI.GSC'): noise level at 8.6e-13, max value 2.4e-08
+2022-11-15 10:54:32,894 core  1132845DEBUG   ('38474119', 'CI.WBS'): bulk window (16.13s, 20.13s) coda window (20.13s, 67.13s)
+2022-11-15 10:54:32,918 core  1132845DEBUG   ('38474119', 'CI.WBS'): cut coda at local minimum detected at 20.72s.
+2022-11-15 10:54:32,918 core  1132845DEBUG   ('38474119', 'CI.WBS'): coda window of length 0.6s shorter than 2.0 -> skip pair
+2022-11-15 10:54:32,934 core  1132849DEBUG   ('38474119', 'CI.LMR2'): noise level at 8.4e-14, max value 9.3e-09
+2022-11-15 10:54:32,951 core  1132845DEBUG   ('38474119', 'CI.CCA'): bulk window (19.91s, 23.91s) coda window (23.91s, 70.92s)
+2022-11-15 10:54:32,954 core  1132845DEBUG   ('38474119', 'CI.CCA'): cut coda at local minimum detected at 50.94s.
+2022-11-15 10:54:32,980 core  1132845DEBUG   ('38474119', 'CI.WHF'): bulk window (20.38s, 24.38s) coda window (24.38s, 71.38s)
+2022-11-15 10:54:33,008 core  1132845DEBUG   ('38474119', 'CI.WHF'): cut coda at local minimum detected at 26.83s.
+2022-11-15 10:54:33,017 core  1132845DEBUG   ('38474119', 'CI.GSC'): bulk window (21.24s, 25.24s) coda window (25.24s, 72.24s)
+2022-11-15 10:54:33,023 core  1132849DEBUG   ('38474119', 'CI.ISA'): noise level at 1.8e-13, max value 1.2e-07
+2022-11-15 10:54:33,042 core  1132845DEBUG   ('38474119', 'CI.GSC'): cut coda at local minimum detected at 37.34s.
+2022-11-15 10:54:33,072 core  1132845DEBUG   ('38474119', 'CI.LMR2'): bulk window (22.62s, 26.62s) coda window (26.62s, 73.62s)
+2022-11-15 10:54:33,075 core  1132845DEBUG   ('38474119', 'CI.LMR2'): cut coda at local minimum detected at 29.94s.
+2022-11-15 10:54:33,140 core  1132849DEBUG   ('38474119', 'CI.TEH'): noise level at 4.1e-14, max value 3.0e-08
+2022-11-15 10:54:33,154 core  1132845DEBUG   ('38474119', 'CI.ISA'): bulk window (23.59s, 27.59s) coda window (27.59s, 74.59s)
+2022-11-15 10:54:33,186 core  1132845DEBUG   ('38474119', 'CI.ISA'): cut coda at local minimum detected at 48.04s.
+2022-11-15 10:54:33,210 core  1132849DEBUG   ('38474119', 'CI.EDW2'): noise level at 5.7e-14, max value 8.7e-09
+2022-11-15 10:54:33,233 core  1132845DEBUG   ('38474119', 'CI.TEH'): bulk window (24.73s, 28.73s) coda window (28.73s, 75.72s)
+2022-11-15 10:54:33,237 core  1132845DEBUG   ('38474119', 'CI.TEH'): cut coda at local minimum detected at 49.45s.
+2022-11-15 10:54:33,248 core  1132849DEBUG   ('38474119', 'CI.LDR'): noise level at 1.7e-12, max value 3.8e-08
+2022-11-15 10:54:33,279 core  1132849DEBUG   ('38474119', 'CI.CLC'): bulk window (5.13s, 9.13s) coda window (9.13s, 56.13s)
+2022-11-15 10:54:33,283 core  1132849DEBUG   ('38474119', 'CI.CLC'): cut coda at local minimum detected at 22.19s.
+2022-11-15 10:54:33,326 core  1132845DEBUG   ('38474119', 'CI.EDW2'): bulk window (26.68s, 30.68s) coda window (30.68s, 77.68s)
+2022-11-15 10:54:33,329 core  1132845DEBUG   ('38474119', 'CI.EDW2'): cut coda at local minimum detected at 32.44s.
+2022-11-15 10:54:33,329 core  1132845DEBUG   ('38474119', 'CI.EDW2'): coda window of length 1.8s shorter than 2.0 -> skip pair
+2022-11-15 10:54:33,390 core  1132845DEBUG   ('38474119', 'CI.LDR'): bulk window (29.44s, 33.44s) coda window (33.44s, 80.44s)
+2022-11-15 10:54:33,393 core  1132845DEBUG   ('38474119', 'CI.LDR'): cut coda at local minimum detected at 54.03s.
+2022-11-15 10:54:33,400 core  1132849DEBUG   ('38474119', 'CI.SRT'): bulk window (7.01s, 11.01s) coda window (11.01s, 58.01s)
+2022-11-15 10:54:33,404 core  1132849DEBUG   ('38474119', 'CI.SRT'): cut coda at local minimum detected at 37.18s.
+2022-11-15 10:54:33,456 core  1132849DEBUG   ('38474119', 'CI.CCC'): bulk window (6.69s, 10.69s) coda window (10.69s, 57.69s)
+2022-11-15 10:54:33,459 core  1132849DEBUG   ('38474119', 'CI.CCC'): cut coda at local minimum detected at 40.57s.
+2022-11-15 10:54:33,561 core  1132849DEBUG   ('38474119', 'CI.LRL'): bulk window (7.17s, 11.17s) coda window (11.17s, 58.17s)
+2022-11-15 10:54:33,565 core  1132849DEBUG   ('38474119', 'CI.LRL'): cut coda at local minimum detected at 40.78s.
+2022-11-15 10:54:33,671 core  1132849DEBUG   ('38474119', 'CI.SLA'): bulk window (9.29s, 13.29s) coda window (13.29s, 60.29s)
+2022-11-15 10:54:33,674 core  1132849DEBUG   ('38474119', 'CI.SLA'): cut coda at local minimum detected at 41.51s.
+2022-11-15 10:54:33,729 core  1132849DEBUG   ('38474119', 'CI.MPM'): bulk window (11.87s, 15.87s) coda window (15.87s, 62.87s)
+2022-11-15 10:54:33,732 core  1132849DEBUG   ('38474119', 'CI.MPM'): cut coda at local minimum detected at 39.84s.
+2022-11-15 10:54:33,763 core  1132849DEBUG   ('38474119', 'CI.JRC2'): bulk window (11.98s, 15.98s) coda window (15.98s, 62.98s)
+2022-11-15 10:54:33,864 core  1132849DEBUG   ('38474119', 'CI.JRC2'): cut coda at local minimum detected at 37.48s.
+2022-11-15 10:54:33,920 core  1132849DEBUG   ('38474119', 'CI.WBS'): bulk window (16.13s, 20.13s) coda window (20.13s, 67.13s)
+2022-11-15 10:54:33,963 core  1132849DEBUG   ('38474119', 'CI.WBS'): cut coda at local minimum detected at 45.72s.
+2022-11-15 10:54:34,006 core  1132849DEBUG   ('38474119', 'CI.CCA'): bulk window (19.91s, 23.91s) coda window (23.91s, 70.92s)
+2022-11-15 10:54:34,040 core  1132849DEBUG   ('38474119', 'CI.CCA'): cut coda at local minimum detected at 47.63s.
+2022-11-15 10:54:34,164 core  1132849DEBUG   ('38474119', 'CI.WHF'): bulk window (20.38s, 24.38s) coda window (24.38s, 71.38s)
+2022-11-15 10:54:34,231 core  1132849DEBUG   ('38474119', 'CI.WHF'): cut coda at local minimum detected at 45.09s.
+2022-11-15 10:54:34,350 core  1132849DEBUG   ('38474119', 'CI.GSC'): bulk window (21.24s, 25.24s) coda window (25.24s, 72.24s)
+2022-11-15 10:54:34,353 core  1132849DEBUG   ('38474119', 'CI.GSC'): cut coda at local minimum detected at 49.29s.
+2022-11-15 10:54:34,419 core  1132849DEBUG   ('38474119', 'CI.LMR2'): bulk window (22.62s, 26.62s) coda window (26.62s, 73.62s)
+2022-11-15 10:54:34,422 core  1132849DEBUG   ('38474119', 'CI.LMR2'): cut coda at local minimum detected at 50.09s.
+2022-11-15 10:54:34,478 core  1132849DEBUG   ('38474119', 'CI.ISA'): bulk window (23.59s, 27.59s) coda window (27.59s, 74.59s)
+2022-11-15 10:54:34,481 core  1132849DEBUG   ('38474119', 'CI.ISA'): cut coda at local minimum detected at 48.11s.
+2022-11-15 10:54:34,657 core  1132849DEBUG   ('38474119', 'CI.TEH'): bulk window (24.73s, 28.73s) coda window (28.73s, 75.72s)
+2022-11-15 10:54:34,696 core  1132849DEBUG   ('38474119', 'CI.TEH'): cut coda at local minimum detected at 50.92s.
+2022-11-15 10:54:34,806 core  1132849DEBUG   ('38474119', 'CI.EDW2'): bulk window (26.68s, 30.68s) coda window (30.68s, 77.68s)
+2022-11-15 10:54:34,810 core  1132849DEBUG   ('38474119', 'CI.EDW2'): cut coda at local minimum detected at 53.91s.
+2022-11-15 10:54:34,798 core  1132848DEBUG   ('38474119', 'CI.CLC'): noise level at 4.5e-13, max value 3.9e-06
+2022-11-15 10:54:34,852 core  1132849DEBUG   ('38474119', 'CI.LDR'): bulk window (29.44s, 33.44s) coda window (33.44s, 80.44s)
+2022-11-15 10:54:34,858 core  1132849DEBUG   ('38474119', 'CI.LDR'): cut coda at local minimum detected at 53.15s.
+2022-11-15 10:54:34,913 core  1132848DEBUG   ('38474119', 'CI.SRT'): noise level at 6.4e-13, max value 3.1e-06
+2022-11-15 10:54:35,028 core  1132848DEBUG   ('38474119', 'CI.CCC'): noise level at 6.6e-12, max value 3.7e-06
+2022-11-15 10:54:35,125 core  1132848DEBUG   ('38474119', 'CI.LRL'): noise level at 1.1e-12, max value 2.5e-06
+2022-11-15 10:54:35,133 core  1132848DEBUG   ('38474119', 'CI.SLA'): noise level at 3.7e-12, max value 3.7e-06
+2022-11-15 10:54:35,140 core  1132848DEBUG   ('38474119', 'CI.MPM'): noise level at 1.2e-13, max value 2.0e-07
+2022-11-15 10:54:35,148 core  1132848DEBUG   ('38474119', 'CI.JRC2'): noise level at 1.7e-12, max value 1.1e-04
+2022-11-15 10:54:35,156 core  1132848DEBUG   ('38474119', 'CI.WBS'): noise level at 1.7e-12, max value 5.8e-07
+2022-11-15 10:54:35,165 core  1132848DEBUG   ('38474119', 'CI.CCA'): noise level at 2.4e-13, max value 4.6e-08
+2022-11-15 10:54:35,174 core  1132848DEBUG   ('38474119', 'CI.WHF'): noise level at 5.6e-13, max value 1.1e-06
+2022-11-15 10:54:35,182 core  1132848DEBUG   ('38474119', 'CI.GSC'): noise level at 2.4e-13, max value 3.7e-08
+2022-11-15 10:54:35,189 core  1132848DEBUG   ('38474119', 'CI.LMR2'): noise level at 6.1e-14, max value 8.9e-09
+2022-11-15 10:54:35,198 core  1132848DEBUG   ('38474119', 'CI.ISA'): noise level at 3.4e-13, max value 1.4e-07
+2022-11-15 10:54:35,206 core  1132848DEBUG   ('38474119', 'CI.TEH'): noise level at 4.4e-14, max value 4.6e-08
+2022-11-15 10:54:35,217 core  1132848DEBUG   ('38474119', 'CI.EDW2'): noise level at 2.5e-14, max value 6.5e-09
+2022-11-15 10:54:35,222 core  1132848DEBUG   ('38474119', 'CI.LDR'): noise level at 1.3e-12, max value 7.0e-08
+2022-11-15 10:54:35,227 core  1132848DEBUG   ('38474119', 'CI.CLC'): bulk window (5.13s, 9.13s) coda window (9.13s, 56.13s)
+2022-11-15 10:54:35,231 core  1132848DEBUG   ('38474119', 'CI.CLC'): cut coda at local minimum detected at 22.43s.
+2022-11-15 10:54:35,240 core  1132848DEBUG   ('38474119', 'CI.SRT'): bulk window (7.01s, 11.01s) coda window (11.01s, 58.01s)
+2022-11-15 10:54:35,244 core  1132848DEBUG   ('38474119', 'CI.SRT'): cut coda at local minimum detected at 37.19s.
+2022-11-15 10:54:35,253 core  1132848DEBUG   ('38474119', 'CI.CCC'): bulk window (6.69s, 10.69s) coda window (10.69s, 57.69s)
+2022-11-15 10:54:35,256 core  1132848DEBUG   ('38474119', 'CI.CCC'): cut coda at local minimum detected at 40.50s.
+2022-11-15 10:54:35,265 core  1132848DEBUG   ('38474119', 'CI.LRL'): bulk window (7.17s, 11.17s) coda window (11.17s, 58.17s)
+2022-11-15 10:54:35,269 core  1132848DEBUG   ('38474119', 'CI.LRL'): cut coda at local minimum detected at 40.31s.
+2022-11-15 10:54:35,278 core  1132848DEBUG   ('38474119', 'CI.SLA'): bulk window (9.29s, 13.29s) coda window (13.29s, 60.29s)
+2022-11-15 10:54:35,281 core  1132848DEBUG   ('38474119', 'CI.SLA'): cut coda at local minimum detected at 41.18s.
+2022-11-15 10:54:35,290 core  1132848DEBUG   ('38474119', 'CI.MPM'): bulk window (11.87s, 15.87s) coda window (15.87s, 62.87s)
+2022-11-15 10:54:35,293 core  1132848DEBUG   ('38474119', 'CI.MPM'): cut coda at local minimum detected at 39.40s.
+2022-11-15 10:54:35,301 core  1132848DEBUG   ('38474119', 'CI.JRC2'): bulk window (11.98s, 15.98s) coda window (15.98s, 62.98s)
+2022-11-15 10:54:35,305 core  1132848DEBUG   ('38474119', 'CI.JRC2'): cut coda at local minimum detected at 34.88s.
+2022-11-15 10:54:35,353 core  1132848DEBUG   ('38474119', 'CI.WBS'): bulk window (16.13s, 20.13s) coda window (20.13s, 67.13s)
+2022-11-15 10:54:35,548 core  1132848DEBUG   ('38474119', 'CI.WBS'): cut coda at local minimum detected at 45.76s.
+2022-11-15 10:54:35,656 core  1132848DEBUG   ('38474119', 'CI.CCA'): bulk window (19.91s, 23.91s) coda window (23.91s, 70.92s)
+2022-11-15 10:54:35,704 core  1132848DEBUG   ('38474119', 'CI.CCA'): cut coda at local minimum detected at 49.52s.
+2022-11-15 10:54:35,718 core  1132848DEBUG   ('38474119', 'CI.WHF'): bulk window (20.38s, 24.38s) coda window (24.38s, 71.38s)
+2022-11-15 10:54:35,720 core  1132848DEBUG   ('38474119', 'CI.WHF'): cut coda at local minimum detected at 45.31s.
+2022-11-15 10:54:35,728 core  1132848DEBUG   ('38474119', 'CI.GSC'): bulk window (21.24s, 25.24s) coda window (25.24s, 72.24s)
+2022-11-15 10:54:35,732 core  1132848DEBUG   ('38474119', 'CI.GSC'): cut coda at local minimum detected at 49.35s.
+2022-11-15 10:54:35,737 core  1132847DEBUG   ('38474119', 'CI.CLC'): noise level at 2.5e-13, max value 2.8e-06
+2022-11-15 10:54:35,741 core  1132848DEBUG   ('38474119', 'CI.LMR2'): bulk window (22.62s, 26.62s) coda window (26.62s, 73.62s)
+2022-11-15 10:54:35,744 core  1132848DEBUG   ('38474119', 'CI.LMR2'): cut coda at local minimum detected at 49.64s.
+2022-11-15 10:54:35,754 core  1132848DEBUG   ('38474119', 'CI.ISA'): bulk window (23.59s, 27.59s) coda window (27.59s, 74.59s)
+2022-11-15 10:54:35,755 core  1132850DEBUG   ('38474119', 'CI.CLC'): noise level at 8.9e-13, max value 2.3e-06
+2022-11-15 10:54:35,757 core  1132848DEBUG   ('38474119', 'CI.ISA'): cut coda at local minimum detected at 48.33s.
+2022-11-15 10:54:35,760 core  1132847DEBUG   ('38474119', 'CI.SRT'): noise level at 9.8e-13, max value 3.9e-06
+2022-11-15 10:54:35,767 core  1132848DEBUG   ('38474119', 'CI.TEH'): bulk window (24.73s, 28.73s) coda window (28.73s, 75.72s)
+2022-11-15 10:54:35,770 core  1132848DEBUG   ('38474119', 'CI.TEH'): cut coda at local minimum detected at 50.93s.
+2022-11-15 10:54:35,775 core  1132847DEBUG   ('38474119', 'CI.CCC'): noise level at 4.1e-12, max value 4.0e-06
+2022-11-15 10:54:35,777 core  1132850DEBUG   ('38474119', 'CI.SRT'): noise level at 1.5e-13, max value 3.7e-07
+2022-11-15 10:54:35,779 core  1132848DEBUG   ('38474119', 'CI.EDW2'): bulk window (26.68s, 30.68s) coda window (30.68s, 77.68s)
+2022-11-15 10:54:35,783 core  1132848DEBUG   ('38474119', 'CI.EDW2'): cut coda at local minimum detected at 33.39s.
+2022-11-15 10:54:35,785 core  1132850DEBUG   ('38474119', 'CI.CCC'): noise level at 2.8e-12, max value 3.4e-06
+2022-11-15 10:54:35,791 core  1132848DEBUG   ('38474119', 'CI.LDR'): bulk window (29.44s, 33.44s) coda window (33.44s, 80.44s)
+2022-11-15 10:54:35,794 core  1132850DEBUG   ('38474119', 'CI.LRL'): noise level at 4.2e-12, max value 9.5e-07
+2022-11-15 10:54:35,795 core  1132848DEBUG   ('38474119', 'CI.LDR'): cut coda at local minimum detected at 54.36s.
+2022-11-15 10:54:35,795 core  1132847DEBUG   ('38474119', 'CI.LRL'): noise level at 6.8e-13, max value 1.5e-06
+2022-11-15 10:54:35,801 core  1132850DEBUG   ('38474119', 'CI.SLA'): noise level at 6.4e-12, max value 8.0e-07
+2022-11-15 10:54:35,809 core  1132847DEBUG   ('38474119', 'CI.SLA'): noise level at 6.3e-12, max value 2.0e-06
+2022-11-15 10:54:35,817 core  1132847DEBUG   ('38474119', 'CI.MPM'): noise level at 1.2e-13, max value 3.6e-07
+2022-11-15 10:54:35,817 core  1132850DEBUG   ('38474119', 'CI.MPM'): noise level at 4.9e-14, max value 9.1e-08
+2022-11-15 10:54:35,825 core  1132850DEBUG   ('38474119', 'CI.JRC2'): noise level at 2.7e-12, max value 8.6e-05
+2022-11-15 10:54:35,825 core  1132847DEBUG   ('38474119', 'CI.JRC2'): noise level at 1.4e-12, max value 3.8e-05
+2022-11-15 10:54:35,833 core  1132847DEBUG   ('38474119', 'CI.WBS'): noise level at 1.6e-12, max value 1.1e-06
+2022-11-15 10:54:35,842 core  1132847DEBUG   ('38474119', 'CI.CCA'): noise level at 1.4e-13, max value 1.1e-07
+2022-11-15 10:54:35,842 core  1132850DEBUG   ('38474119', 'CI.WBS'): noise level at 1.9e-12, max value 1.3e-07
+2022-11-15 10:54:35,852 core  1132847DEBUG   ('38474119', 'CI.WHF'): noise level at 6.9e-13, max value 1.3e-06
+2022-11-15 10:54:35,860 core  1132850DEBUG   ('38474119', 'CI.CCA'): noise level at 7.8e-14, max value 3.9e-09
+2022-11-15 10:54:35,860 core  1132847DEBUG   ('38474119', 'CI.GSC'): noise level at 1.5e-13, max value 4.1e-08
+2022-11-15 10:54:35,879 core  1132850DEBUG   ('38474119', 'CI.WHF'): noise level at 1.9e-13, max value 1.8e-07
+2022-11-15 10:54:35,897 core  1132850DEBUG   ('38474119', 'CI.GSC'): noise level at 6.0e-13, max value 4.0e-09
+2022-11-15 10:54:35,903 core  1132847DEBUG   ('38474119', 'CI.LMR2'): noise level at 6.5e-14, max value 2.2e-08
+2022-11-15 10:54:35,904 core  1132850DEBUG   ('38474119', 'CI.LMR2'): noise level at 1.2e-13, max value 3.7e-09
+2022-11-15 10:54:35,921 core  1132850DEBUG   ('38474119', 'CI.ISA'): noise level at 6.0e-14, max value 2.7e-08
+2022-11-15 10:54:35,939 core  1132850DEBUG   ('38474119', 'CI.TEH'): noise level at 4.6e-14, max value 6.6e-09
+2022-11-15 10:54:35,945 core  1132847DEBUG   ('38474119', 'CI.ISA'): noise level at 2.6e-13, max value 2.2e-07
+2022-11-15 10:54:35,956 core  1132850DEBUG   ('38474119', 'CI.EDW2'): noise level at 6.7e-14, max value 4.6e-09
+2022-11-15 10:54:35,964 core  1132850DEBUG   ('38474119', 'CI.LDR'): noise level at 8.9e-13, max value 3.4e-09
+2022-11-15 10:54:35,980 core  1132850DEBUG   ('38474119', 'CI.CLC'): bulk window (5.13s, 9.13s) coda window (9.13s, 56.13s)
+2022-11-15 10:54:35,983 core  1132850DEBUG   ('38474119', 'CI.CLC'): cut coda at local minimum detected at 21.43s.
+2022-11-15 10:54:36,000 core  1132847DEBUG   ('38474119', 'CI.TEH'): noise level at 5.1e-14, max value 8.5e-08
+2022-11-15 10:54:36,007 core  1132847DEBUG   ('38474119', 'CI.EDW2'): noise level at 1.7e-14, max value 8.4e-09
+2022-11-15 10:54:36,020 core  1132847DEBUG   ('38474119', 'CI.LDR'): noise level at 2.0e-12, max value 9.8e-08
+2022-11-15 10:54:36,027 core  1132847DEBUG   ('38474119', 'CI.CLC'): bulk window (5.13s, 9.13s) coda window (9.13s, 56.13s)
+2022-11-15 10:54:36,030 core  1132847DEBUG   ('38474119', 'CI.CLC'): cut coda at local minimum detected at 21.14s.
+2022-11-15 10:54:36,038 core  1132847DEBUG   ('38474119', 'CI.SRT'): bulk window (7.01s, 11.01s) coda window (11.01s, 58.01s)
+2022-11-15 10:54:36,042 core  1132847DEBUG   ('38474119', 'CI.SRT'): cut coda at local minimum detected at 37.82s.
+2022-11-15 10:54:36,050 core  1132847DEBUG   ('38474119', 'CI.CCC'): bulk window (6.69s, 10.69s) coda window (10.69s, 57.69s)
+2022-11-15 10:54:36,055 core  1132850DEBUG   ('38474119', 'CI.SRT'): bulk window (7.01s, 11.01s) coda window (11.01s, 58.01s)
+2022-11-15 10:54:36,065 core  1132847DEBUG   ('38474119', 'CI.CCC'): cut coda at local minimum detected at 40.40s.
+2022-11-15 10:54:36,086 core  1132850DEBUG   ('38474119', 'CI.SRT'): cut coda at local minimum detected at 40.21s.
+2022-11-15 10:54:36,089 core  1132847DEBUG   ('38474119', 'CI.LRL'): bulk window (7.17s, 11.17s) coda window (11.17s, 58.17s)
+2022-11-15 10:54:36,093 core  1132847DEBUG   ('38474119', 'CI.LRL'): cut coda at local minimum detected at 40.08s.
+2022-11-15 10:54:36,094 core  1132850DEBUG   ('38474119', 'CI.CCC'): bulk window (6.69s, 10.69s) coda window (10.69s, 57.69s)
+2022-11-15 10:54:36,117 core  1132847DEBUG   ('38474119', 'CI.SLA'): bulk window (9.29s, 13.29s) coda window (13.29s, 60.29s)
+2022-11-15 10:54:36,124 core  1132850DEBUG   ('38474119', 'CI.CCC'): cut coda at local minimum detected at 40.63s.
+2022-11-15 10:54:36,136 core  1132847DEBUG   ('38474119', 'CI.SLA'): cut coda at local minimum detected at 41.06s.
+2022-11-15 10:54:36,159 core  1132847DEBUG   ('38474119', 'CI.MPM'): bulk window (11.87s, 15.87s) coda window (15.87s, 62.87s)
+2022-11-15 10:54:36,160 core  1132850DEBUG   ('38474119', 'CI.LRL'): bulk window (7.17s, 11.17s) coda window (11.17s, 58.17s)
+2022-11-15 10:54:36,162 core  1132847DEBUG   ('38474119', 'CI.MPM'): cut coda at local minimum detected at 39.41s.
+2022-11-15 10:54:36,163 core  1132850DEBUG   ('38474119', 'CI.LRL'): cut coda at local minimum detected at 41.14s.
+2022-11-15 10:54:36,199 core  1132850DEBUG   ('38474119', 'CI.SLA'): bulk window (9.29s, 13.29s) coda window (13.29s, 38.52s)
+2022-11-15 10:54:36,204 core  1132847DEBUG   ('38474119', 'CI.JRC2'): bulk window (11.98s, 15.98s) coda window (15.98s, 62.98s)
+2022-11-15 10:54:36,228 core  1132847DEBUG   ('38474119', 'CI.JRC2'): cut coda at local minimum detected at 35.35s.
+2022-11-15 10:54:36,229 core  1132850DEBUG   ('38474119', 'CI.MPM'): bulk window (11.87s, 15.87s) coda window (15.87s, 62.87s)
+2022-11-15 10:54:36,251 core  1132850DEBUG   ('38474119', 'CI.MPM'): cut coda at local minimum detected at 38.73s.
+2022-11-15 10:54:36,277 core  1132847DEBUG   ('38474119', 'CI.WBS'): bulk window (16.13s, 20.13s) coda window (20.13s, 67.13s)
+2022-11-15 10:54:36,277 core  1132850DEBUG   ('38474119', 'CI.JRC2'): bulk window (11.98s, 15.98s) coda window (15.98s, 62.98s)
+2022-11-15 10:54:36,280 core  1132850DEBUG   ('38474119', 'CI.JRC2'): cut coda at local minimum detected at 37.87s.
+2022-11-15 10:54:36,304 core  1132847DEBUG   ('38474119', 'CI.WBS'): cut coda at local minimum detected at 43.60s.
+2022-11-15 10:54:36,327 core  1132847DEBUG   ('38474119', 'CI.CCA'): bulk window (19.91s, 23.91s) coda window (23.91s, 70.92s)
+2022-11-15 10:54:36,330 core  1132847DEBUG   ('38474119', 'CI.CCA'): cut coda at local minimum detected at 49.40s.
+2022-11-15 10:54:36,339 core  1132850DEBUG   ('38474119', 'CI.WBS'): bulk window (16.13s, 20.13s) coda window (20.13s, 45.15s)
+2022-11-15 10:54:36,357 core  1132850DEBUG   ('38474119', 'CI.CCA'): bulk window (19.91s, 23.91s) coda window (23.91s, 70.92s)
+2022-11-15 10:54:36,371 core  1132850DEBUG   ('38474119', 'CI.CCA'): cut coda at local minimum detected at 49.90s.
+2022-11-15 10:54:36,391 core  1132850DEBUG   ('38474119', 'CI.WHF'): bulk window (20.38s, 24.38s) coda window (24.38s, 71.38s)
+2022-11-15 10:54:36,394 core  1132850DEBUG   ('38474119', 'CI.WHF'): cut coda at local minimum detected at 46.57s.
+2022-11-15 10:54:36,400 core  1132847DEBUG   ('38474119', 'CI.WHF'): bulk window (20.38s, 24.38s) coda window (24.38s, 71.38s)
+2022-11-15 10:54:36,403 core  1132847DEBUG   ('38474119', 'CI.WHF'): cut coda at local minimum detected at 38.61s.
+2022-11-15 10:54:36,414 core  1132850DEBUG   ('38474119', 'CI.GSC'): bulk window (21.24s, 25.24s) coda window (25.24s, 42.65s)
+2022-11-15 10:54:36,431 core  1132847DEBUG   ('38474119', 'CI.GSC'): bulk window (21.24s, 25.24s) coda window (25.24s, 72.24s)
+2022-11-15 10:54:36,436 core  1132850DEBUG   ('38474119', 'CI.LMR2'): bulk window (22.62s, 26.62s) coda window (26.62s, 73.62s)
+2022-11-15 10:54:36,439 core  1132850DEBUG   ('38474119', 'CI.LMR2'): cut coda at local minimum detected at 50.61s.
+2022-11-15 10:54:36,447 core  1132850DEBUG   ('38474119', 'CI.ISA'): bulk window (23.59s, 27.59s) coda window (27.59s, 74.59s)
+2022-11-15 10:54:36,451 core  1132850DEBUG   ('38474119', 'CI.ISA'): cut coda at local minimum detected at 48.57s.
+2022-11-15 10:54:36,459 core  1132847DEBUG   ('38474119', 'CI.GSC'): cut coda at local minimum detected at 46.35s.
+2022-11-15 10:54:36,483 core  1132850DEBUG   ('38474119', 'CI.TEH'): bulk window (24.73s, 28.73s) coda window (28.73s, 75.72s)
+2022-11-15 10:54:36,489 core  1132847DEBUG   ('38474119', 'CI.LMR2'): bulk window (22.62s, 26.62s) coda window (26.62s, 73.62s)
+2022-11-15 10:54:36,492 core  1132847DEBUG   ('38474119', 'CI.LMR2'): cut coda at local minimum detected at 29.91s.
+2022-11-15 10:54:36,518 core  1132850DEBUG   ('38474119', 'CI.TEH'): cut coda at local minimum detected at 51.45s.
+2022-11-15 10:54:36,520 core  1132847DEBUG   ('38474119', 'CI.ISA'): bulk window (23.59s, 27.59s) coda window (27.59s, 74.59s)
+2022-11-15 10:54:36,542 core  1132847DEBUG   ('38474119', 'CI.ISA'): cut coda at local minimum detected at 48.30s.
+2022-11-15 10:54:36,544 core  1132850DEBUG   ('38474119', 'CI.EDW2'): bulk window (26.68s, 30.68s) coda window (30.68s, 77.68s)
+2022-11-15 10:54:36,563 core  1132847DEBUG   ('38474119', 'CI.TEH'): bulk window (24.73s, 28.73s) coda window (28.73s, 75.72s)
+2022-11-15 10:54:36,566 core  1132847DEBUG   ('38474119', 'CI.TEH'): cut coda at local minimum detected at 51.41s.
+2022-11-15 10:54:36,574 core  1132850DEBUG   ('38474119', 'CI.EDW2'): cut coda at local minimum detected at 53.62s.
+2022-11-15 10:54:36,601 core  1132847DEBUG   ('38474119', 'CI.EDW2'): bulk window (26.68s, 30.68s) coda window (30.68s, 77.68s)
+2022-11-15 10:54:36,604 core  1132847DEBUG   ('38474119', 'CI.EDW2'): cut coda at local minimum detected at 33.34s.
+2022-11-15 10:54:36,625 core  1132850DEBUG   ('38474119', 'CI.LDR'): bulk window (29.44s, 33.44s) coda window (33.44s, 80.44s)
+2022-11-15 10:54:36,652 core  1132847DEBUG   ('38474119', 'CI.LDR'): bulk window (29.44s, 33.44s) coda window (33.44s, 80.44s)
+2022-11-15 10:54:36,654 core  1132850DEBUG   ('38474119', 'CI.LDR'): cut coda at local minimum detected at 53.15s.
+2022-11-15 10:54:36,675 core  1132847DEBUG   ('38474119', 'CI.LDR'): cut coda at local minimum detected at 54.42s.
+2022-11-15 10:54:36,967 core  1132852DEBUG   ('38474119', 'CI.CLC'): noise level at 1.4e-12, max value 1.7e-06
+2022-11-15 10:54:36,976 core  1132852DEBUG   ('38474119', 'CI.SRT'): noise level at 9.8e-14, max value 1.9e-08
+2022-11-15 10:54:36,984 core  1132852DEBUG   ('38474119', 'CI.CCC'): noise level at 4.0e-11, max value 4.1e-07
+2022-11-15 10:54:36,992 core  1132852DEBUG   ('38474119', 'CI.LRL'): noise level at 7.5e-12, max value 6.0e-08
+2022-11-15 10:54:37,153 core  1132852DEBUG   ('38474119', 'CI.SLA'): noise level at 1.1e-11, max value 7.6e-09
+2022-11-15 10:54:37,294 core  1132852DEBUG   ('38474119', 'CI.MPM'): noise level at 4.0e-14, max value 9.0e-09
+2022-11-15 10:54:37,302 core  1132852DEBUG   ('38474119', 'CI.JRC2'): noise level at 1.4e-12, max value 1.9e-06
+2022-11-15 10:54:37,313 core  1132852DEBUG   ('38474119', 'CI.WBS'): noise level at 5.1e-12, max value 2.5e-08
+2022-11-15 10:54:37,316 core  1132851DEBUG   ('38474119', 'CI.CLC'): noise level at 1.0e-12, max value 2.2e-06
+2022-11-15 10:54:37,321 core  1132852DEBUG   ('38474119', 'CI.CCA'): noise level at 4.3e-15, max value 2.5e-11
+2022-11-15 10:54:37,325 core  1132851DEBUG   ('38474119', 'CI.SRT'): noise level at 1.8e-13, max value 9.6e-08
+2022-11-15 10:54:37,331 core  1132852DEBUG   ('38474119', 'CI.WHF'): noise level at 4.8e-14, max value 8.3e-09
+2022-11-15 10:54:37,333 core  1132851DEBUG   ('38474119', 'CI.CCC'): noise level at 9.6e-12, max value 2.0e-06
+2022-11-15 10:54:37,339 core  1132852DEBUG   ('38474119', 'CI.GSC'): noise level at 4.9e-14, max value 8.3e-12
+2022-11-15 10:54:37,342 core  1132851DEBUG   ('38474119', 'CI.LRL'): noise level at 1.3e-11, max value 1.9e-07
+2022-11-15 10:54:37,347 core  1132852DEBUG   ('38474119', 'CI.LMR2'): noise level at 5.8e-13, max value 4.5e-10
+2022-11-15 10:54:37,350 core  1132851DEBUG   ('38474119', 'CI.SLA'): noise level at 2.0e-11, max value 4.7e-08
+2022-11-15 10:54:37,358 core  1132851DEBUG   ('38474119', 'CI.MPM'): noise level at 4.4e-14, max value 2.8e-08
+2022-11-15 10:54:37,364 core  1132852DEBUG   ('38474119', 'CI.ISA'): noise level at 1.1e-14, max value 3.0e-09
+2022-11-15 10:54:37,362 core  1132854DEBUG   ('38474119', 'CI.CLC'): noise level at 6.9e-13, max value 1.9e-07
+2022-11-15 10:54:37,366 core  1132851DEBUG   ('38474119', 'CI.JRC2'): noise level at 2.4e-12, max value 9.5e-06
+2022-11-15 10:54:37,372 core  1132854DEBUG   ('38474119', 'CI.SRT'): noise level at 1.2e-14, max value 7.7e-10
+2022-11-15 10:54:37,375 core  1132851DEBUG   ('38474119', 'CI.WBS'): noise level at 3.7e-12, max value 8.1e-08
+2022-11-15 10:54:37,380 core  1132854DEBUG   ('38474119', 'CI.CCC'): noise level at 2.3e-11, max value 5.9e-09
+2022-11-15 10:54:37,381 core  1132852DEBUG   ('38474119', 'CI.TEH'): noise level at 4.6e-14, max value 1.1e-09
+2022-11-15 10:54:37,388 core  1132854DEBUG   ('38474119', 'CI.LRL'): noise level at 1.4e-12, max value 2.2e-09
+2022-11-15 10:54:37,394 core  1132851DEBUG   ('38474119', 'CI.CCA'): noise level at 7.6e-15, max value 2.2e-10
+2022-11-15 10:54:37,396 core  1132854DEBUG   ('38474119', 'CI.SLA'): noise level at 7.0e-13, max value 1.0e-10
+2022-11-15 10:54:37,400 core  1132852DEBUG   ('38474119', 'CI.EDW2'): noise level at 6.5e-14, max value 4.8e-10
+2022-11-15 10:54:37,403 core  1132854DEBUG   ('38474119', 'CI.MPM'): noise level at 2.0e-14, max value 4.0e-10
+2022-11-15 10:54:37,411 core  1132854DEBUG   ('38474119', 'CI.JRC2'): noise level at 9.6e-14, max value 2.9e-08
+2022-11-15 10:54:37,417 core  1132852DEBUG   ('38474119', 'CI.LDR'): noise level at 8.0e-14, max value 2.0e-11
+2022-11-15 10:54:37,419 core  1132854DEBUG   ('38474119', 'CI.WBS'): noise level at 1.9e-12, max value 1.2e-10
+2022-11-15 10:54:37,424 core  1132852DEBUG   ('38474119', 'CI.CLC'): bulk window (5.13s, 9.13s) coda window (9.13s, 34.86s)
+2022-11-15 10:54:37,427 core  1132854DEBUG   ('38474119', 'CI.CCA'): noise level at 2.0e-15, max value 2.4e-13
+2022-11-15 10:54:37,437 core  1132854DEBUG   ('38474119', 'CI.WHF'): noise level at 2.3e-15, max value 7.4e-11
+2022-11-15 10:54:37,445 core  1132854DEBUG   ('38474119', 'CI.GSC'): noise level at 1.3e-15, max value 1.4e-13
+2022-11-15 10:54:37,450 core  1132851DEBUG   ('38474119', 'CI.WHF'): noise level at 1.1e-13, max value 4.4e-08
+2022-11-15 10:54:37,453 core  1132854DEBUG   ('38474119', 'CI.LMR2'): noise level at 5.2e-13, max value 1.7e-11
+2022-11-15 10:54:37,461 core  1132854DEBUG   ('38474119', 'CI.ISA'): noise level at 3.3e-16, max value 3.8e-12
+2022-11-15 10:54:37,477 core  1132854DEBUG   ('38474119', 'CI.TEH'): noise level at 2.6e-15, max value 4.3e-12
+2022-11-15 10:54:37,480 core  1132851DEBUG   ('38474119', 'CI.GSC'): noise level at 7.2e-14, max value 2.3e-10
+2022-11-15 10:54:37,486 core  1132854DEBUG   ('38474119', 'CI.EDW2'): noise level at 1.1e-14, max value 3.4e-12
+2022-11-15 10:54:37,497 core  1132853DEBUG   ('38474119', 'CI.CLC'): noise level at 1.4e-12, max value 7.2e-07
+2022-11-15 10:54:37,503 core  1132854DEBUG   ('38474119', 'CI.LDR'): noise level at 8.4e-15, max value 2.8e-13
+2022-11-15 10:54:37,521 core  1132854DEBUG   ('38474119', 'CI.CLC'): bulk window (5.13s, 9.13s) coda window (9.13s, 21.44s)
+2022-11-15 10:54:37,532 core  1132851DEBUG   ('38474119', 'CI.LMR2'): noise level at 1.6e-13, max value 6.9e-10
+2022-11-15 10:54:37,542 core  1132854DEBUG   ('38474119', 'CI.SRT'): bulk window (7.01s, 11.01s) coda window (11.01s, 58.01s)
+2022-11-15 10:54:37,545 core  1132854DEBUG   ('38474119', 'CI.SRT'): cut coda at local minimum detected at 24.68s.
+2022-11-15 10:54:37,560 core  1132851DEBUG   ('38474119', 'CI.ISA'): noise level at 3.3e-14, max value 2.4e-08
+2022-11-15 10:54:37,566 core  1132854DEBUG   ('38474119', 'CI.CCC'): bulk window (6.69s, 10.69s) coda window (10.69s, 11.62s)
+2022-11-15 10:54:37,566 core  1132854DEBUG   ('38474119', 'CI.CCC'): coda window of length 0.9s shorter than 2.0 -> skip pair
+2022-11-15 10:54:37,575 core  1132852DEBUG   ('38474119', 'CI.CLC'): cut coda at local minimum detected at 22.52s.
+2022-11-15 10:54:37,580 core  1132853DEBUG   ('38474119', 'CI.SRT'): noise level at 3.6e-14, max value 3.3e-09
+2022-11-15 10:54:37,581 core  1132854DEBUG   ('38474119', 'CI.LRL'): bulk window (7.17s, 11.17s) coda window (11.17s, 22.08s)
+2022-11-15 10:54:37,604 core  1132854DEBUG   ('38474119', 'CI.SLA'): bulk window (9.29s, 13.29s) coda window (13.29s, 14.59s)
+2022-11-15 10:54:37,604 core  1132854DEBUG   ('38474119', 'CI.SLA'): coda window of length 1.3s shorter than 2.0 -> skip pair
+2022-11-15 10:54:37,617 core  1132851DEBUG   ('38474119', 'CI.TEH'): noise level at 1.4e-13, max value 2.8e-09
+2022-11-15 10:54:37,619 core  1132854DEBUG   ('38474119', 'CI.MPM'): bulk window (11.87s, 15.87s) coda window (15.87s, 37.95s)
+2022-11-15 10:54:37,622 core  1132854DEBUG   ('38474119', 'CI.MPM'): cut coda at local minimum detected at 29.54s.
+2022-11-15 10:54:37,642 core  1132854DEBUG   ('38474119', 'CI.JRC2'): bulk window (11.98s, 15.98s) coda window (15.98s, 37.12s)
+2022-11-15 10:54:37,645 core  1132854DEBUG   ('38474119', 'CI.JRC2'): cut coda at local minimum detected at 27.36s.
+2022-11-15 10:54:37,662 core  1132853DEBUG   ('38474119', 'CI.CCC'): noise level at 4.4e-11, max value 3.4e-08
+2022-11-15 10:54:37,663 core  1132852DEBUG   ('38474119', 'CI.SRT'): bulk window (7.01s, 11.01s) coda window (11.01s, 58.01s)
+2022-11-15 10:54:37,663 core  1132854DEBUG   ('38474119', 'CI.WBS'): bulk window (16.13s, 20.13s) coda window (20.13s, 20.13s)
+2022-11-15 10:54:37,663 core  1132854DEBUG   ('38474119', 'CI.WBS'): coda window of length 0.0s shorter than 2.0 -> skip pair
+2022-11-15 10:54:37,680 core  1132851DEBUG   ('38474119', 'CI.EDW2'): noise level at 4.2e-14, max value 1.9e-09
+2022-11-15 10:54:37,681 core  1132854DEBUG   ('38474119', 'CI.CCA'): bulk window (19.91s, 23.91s) coda window (23.91s, 31.54s)
+2022-11-15 10:54:37,687 core  1132851DEBUG   ('38474119', 'CI.LDR'): noise level at 2.2e-13, max value 2.7e-10
+2022-11-15 10:54:37,694 core  1132854DEBUG   ('38474119', 'CI.WHF'): bulk window (20.38s, 24.38s) coda window (24.38s, 44.68s)
+2022-11-15 10:54:37,698 core  1132852DEBUG   ('38474119', 'CI.SRT'): cut coda at local minimum detected at 39.42s.
+2022-11-15 10:54:37,702 core  1132851DEBUG   ('38474119', 'CI.CLC'): bulk window (5.13s, 9.13s) coda window (9.13s, 56.13s)
+2022-11-15 10:54:37,703 core  1132853DEBUG   ('38474119', 'CI.LRL'): noise level at 2.4e-12, max value 1.3e-08
+2022-11-15 10:54:37,705 core  1132851DEBUG   ('38474119', 'CI.CLC'): cut coda at local minimum detected at 22.49s.
+2022-11-15 10:54:37,707 core  1132854DEBUG   ('38474119', 'CI.GSC'): bulk window (21.24s, 25.24s) coda window (25.24s, 26.11s)
+2022-11-15 10:54:37,707 core  1132854DEBUG   ('38474119', 'CI.GSC'): coda window of length 0.9s shorter than 2.0 -> skip pair
+2022-11-15 10:54:37,714 core  1132854DEBUG   ('38474119', 'CI.LMR2'): bulk window (22.62s, 26.62s) coda window (26.62s, 29.46s)
+2022-11-15 10:54:37,726 core  1132854DEBUG   ('38474119', 'CI.ISA'): bulk window (23.59s, 27.59s) coda window (27.59s, 40.88s)
+2022-11-15 10:54:37,732 core  1132852DEBUG   ('38474119', 'CI.CCC'): bulk window (6.69s, 10.69s) coda window (10.69s, 20.01s)
+2022-11-15 10:54:37,738 core  1132854DEBUG   ('38474119', 'CI.TEH'): bulk window (24.73s, 28.73s) coda window (28.73s, 39.55s)
+2022-11-15 10:54:37,742 core  1132853DEBUG   ('38474119', 'CI.SLA'): noise level at 1.7e-12, max value 7.9e-10
+2022-11-15 10:54:37,745 core  1132851DEBUG   ('38474119', 'CI.SRT'): bulk window (7.01s, 11.01s) coda window (11.01s, 58.01s)
+2022-11-15 10:54:37,748 core  1132851DEBUG   ('38474119', 'CI.SRT'): cut coda at local minimum detected at 39.27s.
+2022-11-15 10:54:37,750 core  1132854DEBUG   ('38474119', 'CI.EDW2'): bulk window (26.68s, 30.68s) coda window (30.68s, 44.32s)
+2022-11-15 10:54:37,762 core  1132854DEBUG   ('38474119', 'CI.LDR'): bulk window (29.44s, 33.44s) coda window (33.44s, 33.44s)
+2022-11-15 10:54:37,762 core  1132854DEBUG   ('38474119', 'CI.LDR'): coda window of length 0.0s shorter than 2.0 -> skip pair
+2022-11-15 10:54:37,773 core  1132853DEBUG   ('38474119', 'CI.MPM'): noise level at 3.1e-14, max value 1.8e-09
+2022-11-15 10:54:37,775 core  1132851DEBUG   ('38474119', 'CI.CCC'): bulk window (6.69s, 10.69s) coda window (10.69s, 28.74s)
+2022-11-15 10:54:37,786 core  1132853DEBUG   ('38474119', 'CI.JRC2'): noise level at 3.9e-13, max value 2.2e-07
+2022-11-15 10:54:37,791 core  1132852DEBUG   ('38474119', 'CI.LRL'): bulk window (7.17s, 11.17s) coda window (11.17s, 27.95s)
+2022-11-15 10:54:37,792 core  1132853DEBUG   ('38474119', 'CI.WBS'): noise level at 3.8e-12, max value 1.9e-09
+2022-11-15 10:54:37,797 core  1132853DEBUG   ('38474119', 'CI.CCA'): noise level at 3.4e-15, max value 2.9e-12
+2022-11-15 10:54:37,803 core  1132852DEBUG   ('38474119', 'CI.SLA'): bulk window (9.29s, 13.29s) coda window (13.29s, 18.04s)
+2022-11-15 10:54:37,805 core  1132853DEBUG   ('38474119', 'CI.WHF'): noise level at 1.1e-14, max value 8.1e-10
+2022-11-15 10:54:37,813 core  1132853DEBUG   ('38474119', 'CI.GSC'): noise level at 1.3e-14, max value 5.2e-13
+2022-11-15 10:54:37,814 core  1132852DEBUG   ('38474119', 'CI.MPM'): bulk window (11.87s, 15.87s) coda window (15.87s, 40.24s)
+2022-11-15 10:54:37,822 core  1132853DEBUG   ('38474119', 'CI.LMR2'): noise level at 8.6e-13, max value 1.2e-10
+2022-11-15 10:54:37,826 core  1132852DEBUG   ('38474119', 'CI.JRC2'): bulk window (11.98s, 15.98s) coda window (15.98s, 37.73s)
+2022-11-15 10:54:37,830 core  1132853DEBUG   ('38474119', 'CI.ISA'): noise level at 1.4e-15, max value 1.3e-10
+2022-11-15 10:54:37,839 core  1132852DEBUG   ('38474119', 'CI.WBS'): bulk window (16.13s, 20.13s) coda window (20.13s, 26.81s)
+2022-11-15 10:54:37,850 core  1132852DEBUG   ('38474119', 'CI.CCA'): bulk window (19.91s, 23.91s) coda window (23.91s, 70.92s)
+2022-11-15 10:54:37,854 core  1132852DEBUG   ('38474119', 'CI.CCA'): cut coda at local minimum detected at 48.46s.
+2022-11-15 10:54:37,863 core  1132852DEBUG   ('38474119', 'CI.WHF'): bulk window (20.38s, 24.38s) coda window (24.38s, 71.38s)
+2022-11-15 10:54:37,866 core  1132852DEBUG   ('38474119', 'CI.WHF'): cut coda at local minimum detected at 44.78s.
+2022-11-15 10:54:37,875 core  1132852DEBUG   ('38474119', 'CI.GSC'): bulk window (21.24s, 25.24s) coda window (25.24s, 32.58s)
+2022-11-15 10:54:37,877 core  1132851DEBUG   ('38474119', 'CI.LRL'): bulk window (7.17s, 11.17s) coda window (11.17s, 32.14s)
+2022-11-15 10:54:37,886 core  1132852DEBUG   ('38474119', 'CI.LMR2'): bulk window (22.62s, 26.62s) coda window (26.62s, 41.31s)
+2022-11-15 10:54:37,897 core  1132852DEBUG   ('38474119', 'CI.ISA'): bulk window (23.59s, 27.59s) coda window (27.59s, 74.59s)
+2022-11-15 10:54:37,900 core  1132852DEBUG   ('38474119', 'CI.ISA'): cut coda at local minimum detected at 43.71s.
+2022-11-15 10:54:37,937 core  1132853DEBUG   ('38474119', 'CI.TEH'): noise level at 7.2e-15, max value 8.6e-11
+2022-11-15 10:54:37,937 core  1132852DEBUG   ('38474119', 'CI.TEH'): bulk window (24.73s, 28.73s) coda window (28.73s, 48.95s)
+2022-11-15 10:54:37,943 core  1132851DEBUG   ('38474119', 'CI.SLA'): bulk window (9.29s, 13.29s) coda window (13.29s, 22.89s)
+2022-11-15 10:54:37,976 core  1132852DEBUG   ('38474119', 'CI.EDW2'): bulk window (26.68s, 30.68s) coda window (30.68s, 77.68s)
+2022-11-15 10:54:37,979 core  1132852DEBUG   ('38474119', 'CI.EDW2'): cut coda at local minimum detected at 53.72s.
+2022-11-15 10:54:37,988 core  1132853DEBUG   ('38474119', 'CI.EDW2'): noise level at 5.0e-14, max value 3.8e-11
+2022-11-15 10:54:37,998 core  1132852DEBUG   ('38474119', 'CI.LDR'): bulk window (29.44s, 33.44s) coda window (33.44s, 48.03s)
+2022-11-15 10:54:38,012 core  1132851DEBUG   ('38474119', 'CI.MPM'): bulk window (11.87s, 15.87s) coda window (15.87s, 62.87s)
+2022-11-15 10:54:38,015 core  1132851DEBUG   ('38474119', 'CI.MPM'): cut coda at local minimum detected at 39.26s.
+2022-11-15 10:54:38,061 core  1132851DEBUG   ('38474119', 'CI.JRC2'): bulk window (11.98s, 15.98s) coda window (15.98s, 62.98s)
+2022-11-15 10:54:38,071 core  1132853DEBUG   ('38474119', 'CI.LDR'): noise level at 2.8e-14, max value 1.0e-12
+2022-11-15 10:54:38,094 core  1132851DEBUG   ('38474119', 'CI.JRC2'): cut coda at local minimum detected at 37.92s.
+2022-11-15 10:54:38,095 core  1132853DEBUG   ('38474119', 'CI.CLC'): bulk window (5.13s, 9.13s) coda window (9.13s, 34.20s)
+2022-11-15 10:54:38,131 core  1132853DEBUG   ('38474119', 'CI.CLC'): cut coda at local minimum detected at 22.54s.
+2022-11-15 10:54:38,135 core  1132851DEBUG   ('38474119', 'CI.WBS'): bulk window (16.13s, 20.13s) coda window (20.13s, 34.17s)
+2022-11-15 10:54:38,173 core  1132851DEBUG   ('38474119', 'CI.CCA'): bulk window (19.91s, 23.91s) coda window (23.91s, 70.92s)
+2022-11-15 10:54:38,194 core  1132853DEBUG   ('38474119', 'CI.SRT'): bulk window (7.01s, 11.01s) coda window (11.01s, 58.01s)
+2022-11-15 10:54:38,198 core  1132853DEBUG   ('38474119', 'CI.SRT'): cut coda at local minimum detected at 24.72s.
+2022-11-15 10:54:38,207 core  1132851DEBUG   ('38474119', 'CI.CCA'): cut coda at local minimum detected at 49.56s.
+2022-11-15 10:54:38,224 core  1132851DEBUG   ('38474119', 'CI.WHF'): bulk window (20.38s, 24.38s) coda window (24.38s, 71.38s)
+2022-11-15 10:54:38,236 core  1132851DEBUG   ('38474119', 'CI.WHF'): cut coda at local minimum detected at 46.58s.
+2022-11-15 10:54:38,243 core  1132853DEBUG   ('38474119', 'CI.CCC'): bulk window (6.69s, 10.69s) coda window (10.69s, 14.99s)
+2022-11-15 10:54:38,245 core  1132851DEBUG   ('38474119', 'CI.GSC'): bulk window (21.24s, 25.24s) coda window (25.24s, 44.65s)
+2022-11-15 10:54:38,257 core  1132851DEBUG   ('38474119', 'CI.LMR2'): bulk window (22.62s, 26.62s) coda window (26.62s, 73.62s)
+2022-11-15 10:54:38,260 core  1132851DEBUG   ('38474119', 'CI.LMR2'): cut coda at local minimum detected at 50.95s.
+2022-11-15 10:54:38,270 core  1132853DEBUG   ('38474119', 'CI.LRL'): bulk window (7.17s, 11.17s) coda window (11.17s, 25.69s)
+2022-11-15 10:54:38,270 core  1132851DEBUG   ('38474119', 'CI.ISA'): bulk window (23.59s, 27.59s) coda window (27.59s, 74.59s)
+2022-11-15 10:54:38,274 core  1132851DEBUG   ('38474119', 'CI.ISA'): cut coda at local minimum detected at 43.66s.
+2022-11-15 10:54:38,283 core  1132851DEBUG   ('38474119', 'CI.TEH'): bulk window (24.73s, 28.73s) coda window (28.73s, 49.09s)
+2022-11-15 10:54:38,297 core  1132851DEBUG   ('38474119', 'CI.EDW2'): bulk window (26.68s, 30.68s) coda window (30.68s, 77.68s)
+2022-11-15 10:54:38,300 core  1132851DEBUG   ('38474119', 'CI.EDW2'): cut coda at local minimum detected at 53.63s.
+2022-11-15 10:54:38,311 core  1132853DEBUG   ('38474119', 'CI.SLA'): bulk window (9.29s, 13.29s) coda window (13.29s, 17.58s)
+2022-11-15 10:54:38,329 core  1132851DEBUG   ('38474119', 'CI.LDR'): bulk window (29.44s, 33.44s) coda window (33.44s, 53.19s)
+2022-11-15 10:54:38,340 core  1132853DEBUG   ('38474119', 'CI.MPM'): bulk window (11.87s, 15.87s) coda window (15.87s, 38.84s)
+2022-11-15 10:54:38,372 core  1132853DEBUG   ('38474119', 'CI.JRC2'): bulk window (11.98s, 15.98s) coda window (15.98s, 37.67s)
+2022-11-15 10:54:38,413 core  1132853DEBUG   ('38474119', 'CI.WBS'): bulk window (16.13s, 20.13s) coda window (20.13s, 22.05s)
+2022-11-15 10:54:38,414 core  1132853DEBUG   ('38474119', 'CI.WBS'): coda window of length 1.9s shorter than 2.0 -> skip pair
+2022-11-15 10:54:38,492 core  1132853DEBUG   ('38474119', 'CI.CCA'): bulk window (19.91s, 23.91s) coda window (23.91s, 39.77s)
+2022-11-15 10:54:38,568 core  1132842DEBUG   optimization solved WLS with 15172 equations and 16 unknowns 18 times, minimal error: 7.2e-01
+2022-11-15 10:54:38,569 core  1132842DEBUG   freq band (0.50Hz, 1.00Hz): optimization result is {"g0": 3.44515098177525e-05, "b": 0.0780106108989631, "nstations": 15, "error": 0.7170946889366053, "W": {"38474119": 11613290.573697034}, "R": {"CI.CLC": 0.047888565599732584, "CI.SRT": 1.5681322646265172, "CI.CCC": 1.9855622220687559, "CI.SLA": 1.439311430165187, "CI.MPM": 0.30091416815979083, "CI.JRC2": 0.31197859972018416, "CI.WBS": 0.2869962846477938, "CI.CCA": 5.751046406457067, "CI.WHF": 0.41812674863036614, "CI.GSC": 1.8502619797750333, "CI.LMR2": 0.6616037903635601, "CI.ISA": 0.39900660556043677, "CI.TEH": 1.4037117715804135, "CI.EDW2": 6.280260999259092, "CI.LDR": 16.702509848182643}, "v0": 3200}
+2022-11-15 10:54:38,574 core  1132853DEBUG   ('38474119', 'CI.WHF'): bulk window (20.38s, 24.38s) coda window (24.38s, 71.38s)
+2022-11-15 10:54:38,638 core  1132853DEBUG   ('38474119', 'CI.WHF'): cut coda at local minimum detected at 44.78s.
+2022-11-15 10:54:38,717 core  1132853DEBUG   ('38474119', 'CI.GSC'): bulk window (21.24s, 25.24s) coda window (25.24s, 28.79s)
+2022-11-15 10:54:38,778 core  1132853DEBUG   ('38474119', 'CI.LMR2'): bulk window (22.62s, 26.62s) coda window (26.62s, 33.53s)
+2022-11-15 10:54:38,844 core  1132853DEBUG   ('38474119', 'CI.ISA'): bulk window (23.59s, 27.59s) coda window (27.59s, 74.59s)
+2022-11-15 10:54:38,879 core  1132853DEBUG   ('38474119', 'CI.ISA'): cut coda at local minimum detected at 43.62s.
+2022-11-15 10:54:38,925 core  1132853DEBUG   ('38474119', 'CI.TEH'): bulk window (24.73s, 28.73s) coda window (28.73s, 45.74s)
+2022-11-15 10:54:38,960 core  1132853DEBUG   ('38474119', 'CI.EDW2'): bulk window (26.68s, 30.68s) coda window (30.68s, 47.58s)
+2022-11-15 10:54:39,010 core  1132853DEBUG   ('38474119', 'CI.LDR'): bulk window (29.44s, 33.44s) coda window (33.44s, 40.43s)
+2022-11-15 10:54:41,925 core  1132843DEBUG   optimization solved WLS with 14141 equations and 14 unknowns 18 times, minimal error: 7.2e-01
+2022-11-15 10:54:41,929 core  1132843DEBUG   freq band (0.71Hz, 1.41Hz): optimization result is {"g0": 3.134592082888513e-05, "b": 0.1134635127482633, "nstations": 13, "error": 0.7241227008739496, "W": {"38474119": 45540529.747763485}, "R": {"CI.CLC": 0.03973472140141206, "CI.SRT": 1.0001154942115473, "CI.SLA": 1.0918794716687978, "CI.MPM": 0.3012756331382346, "CI.JRC2": 0.7464986448634258, "CI.WBS": 0.4377253378166728, "CI.CCA": 3.707493984617965, "CI.WHF": 0.5225597774024456, "CI.LMR2": 0.8413096677256284, "CI.ISA": 0.5296254913644256, "CI.TEH": 2.525577878708104, "CI.EDW2": 6.378496595216688, "CI.LDR": 16.834102512084055}, "v0": 3200}
+2022-11-15 10:54:42,072 core  1132844DEBUG   optimization solved WLS with 17224 equations and 15 unknowns 18 times, minimal error: 6.9e-01
+2022-11-15 10:54:42,127 core  1132844DEBUG   freq band (1.00Hz, 2.00Hz): optimization result is {"g0": 2.6320972263200544e-05, "b": 0.13837932874951525, "nstations": 14, "error": 0.6930942649017221, "W": {"38474119": 148177891.364223}, "R": {"CI.CLC": 0.042803693203087155, "CI.SRT": 0.6095883395913625, "CI.LRL": 0.08546314352840773, "CI.MPM": 0.2261943891139739, "CI.JRC2": 1.2250961246264185, "CI.WBS": 0.5468241104699618, "CI.CCA": 4.43028662104471, "CI.WHF": 1.2656973073426314, "CI.GSC": 4.037520981125314, "CI.LMR2": 0.7009556388711689, "CI.ISA": 0.5873146760919131, "CI.TEH": 2.7221013364776185, "CI.EDW2": 4.818536465837403, "CI.LDR": 24.207296844919384}, "v0": 3200}
+2022-11-15 10:54:43,637 core  1132854DEBUG   optimization solved WLS with 13065 equations and 12 unknowns 17 times, minimal error: 4.2e-01
+2022-11-15 10:54:43,640 core  1132854DEBUG   freq band (32.00Hz, 64.00Hz): optimization result is {"g0": 5.884312236240587e-05, "b": 0.3276722611810448, "nstations": 11, "error": 0.4177210177355774, "W": {"38474119": 11655384.255658623}, "R": {"CI.CLC": 0.08030045364256257, "CI.SRT": 0.007981720458106712, "CI.LRL": 0.17245935900119191, "CI.MPM": 0.2310691755238373, "CI.JRC2": 0.709165501719883, "CI.CCA": 0.14272597036925191, "CI.WHF": 4.156358478864844, "CI.LMR2": 34.76662300479766, "CI.ISA": 0.8247428695209098, "CI.TEH": 12.4754937614708, "CI.EDW2": 260.1682415561692}, "v0": 3200}
+2022-11-15 10:54:44,671 core  1132845DEBUG   optimization solved WLS with 22840 equations and 15 unknowns 18 times, minimal error: 6.4e-01
+2022-11-15 10:54:44,709 core  1132846DEBUG   optimization solved WLS with 32413 equations and 17 unknowns 19 times, minimal error: 6.5e-01
+2022-11-15 10:54:44,710 core  1132846DEBUG   freq band (2.00Hz, 4.00Hz): optimization result is {"g0": 1.6271075168605163e-05, "b": 0.14319739725632807, "nstations": 16, "error": 0.6459876783029109, "W": {"38474119": 418736785.4765842}, "R": {"CI.CLC": 0.0511715606067477, "CI.SRT": 0.9420488123957491, "CI.CCC": 1.3185830665135347, "CI.LRL": 0.12353750624355025, "CI.SLA": 1.5211854465273635, "CI.MPM": 0.11407332028410919, "CI.JRC2": 0.555731021777559, "CI.WBS": 2.3152444373033285, "CI.CCA": 2.2224707497026444, "CI.WHF": 11.359872568922778, "CI.GSC": 2.3748194879818962, "CI.LMR2": 0.27547578850838866, "CI.ISA": 0.7973201743674156, "CI.TEH": 1.7934109139134813, "CI.EDW2": 1.2205943884662749, "CI.LDR": 19.785926430046214}, "v0": 3200}
+2022-11-15 10:54:44,728 core  1132845DEBUG   freq band (1.40Hz, 2.80Hz): optimization result is {"g0": 2.6320972263200544e-05, "b": 0.1576076270498456, "nstations": 14, "error": 0.6442287985188765, "W": {"38474119": 427433536.55173093}, "R": {"CI.CLC": 0.02641288851058855, "CI.SRT": 0.5073520201479388, "CI.CCC": 1.4829867709536309, "CI.LRL": 0.057899085437695175, "CI.SLA": 1.1832540464816272, "CI.MPM": 0.16592876565965542, "CI.JRC2": 0.6078576751773649, "CI.CCA": 3.439302236929187, "CI.WHF": 14.50374701312639, "CI.GSC": 4.737465861241692, "CI.LMR2": 0.5991104496054982, "CI.ISA": 0.7588907352817005, "CI.TEH": 2.6782771995046564, "CI.LDR": 25.306135006597266}, "v0": 3200}
+2022-11-15 10:54:47,991 core  1132852DEBUG   optimization solved WLS with 26670 equations and 17 unknowns 19 times, minimal error: 5.4e-01
+2022-11-15 10:54:47,995 core  1132852DEBUG   freq band (16.00Hz, 32.00Hz): optimization result is {"g0": 2.440161272315712e-05, "b": 0.2041194696840909, "nstations": 16, "error": 0.5368617297579156, "W": {"38474119": 11775326.345119638}, "R": {"CI.CLC": 0.228863973021511, "CI.SRT": 0.08293211720946818, "CI.CCC": 0.7570807802128359, "CI.LRL": 0.8804428743706698, "CI.SLA": 0.19704093947088552, "CI.MPM": 0.1582394835375243, "CI.JRC2": 2.763963222632562, "CI.WBS": 1.3606297695707452, "CI.CCA": 0.278339931019056, "CI.WHF": 3.4332100744952645, "CI.GSC": 0.09372813986272553, "CI.LMR2": 6.208875033758564, "CI.ISA": 1.4290330917217688, "CI.TEH": 2.671387949918619, "CI.EDW2": 45.21654752548648, "CI.LDR": 7.022267956628329}, "v0": 3200}
+2022-11-15 10:54:48,467 core  1132842DEBUG   create optimization plot at 00_test/plots/optimization_38474119_000.50Hz-001.00Hz.png
+2022-11-15 10:54:48,544 core  1132853DEBUG   optimization solved WLS with 19884 equations and 16 unknowns 18 times, minimal error: 4.7e-01
+2022-11-15 10:54:48,545 core  1132853DEBUG   freq band (22.60Hz, 45.20Hz): optimization result is {"g0": 3.755709878389241e-05, "b": 0.24441409036141967, "nstations": 15, "error": 0.4732823722890114, "W": {"38474119": 4818990.361452535}, "R": {"CI.CLC": 0.27678446020154174, "CI.SRT": 0.03386703726974757, "CI.CCC": 0.42621355036654307, "CI.LRL": 0.6679013901410071, "CI.SLA": 0.08670253005320841, "CI.MPM": 0.3253860973751647, "CI.JRC2": 3.023702873635606, "CI.CCA": 0.2402623120397979, "CI.WHF": 3.463225877040381, "CI.GSC": 0.07834106090045835, "CI.LMR2": 12.724139609969594, "CI.ISA": 1.1553734660902448, "CI.TEH": 5.37356307147544, "CI.EDW2": 98.16321073506592, "CI.LDR": 8.690680322754783}, "v0": 3200}
+2022-11-15 10:54:48,759 core  1132849DEBUG   optimization solved WLS with 37588 equations and 17 unknowns 20 times, minimal error: 5.2e-01
+2022-11-15 10:54:48,760 core  1132849DEBUG   freq band (5.67Hz, 11.33Hz): optimization result is {"g0": 1.4351715614515398e-05, "b": 0.1682088252482444, "nstations": 16, "error": 0.5206911009238487, "W": {"38474119": 235844408.08012435}, "R": {"CI.CLC": 0.06937493857893665, "CI.SRT": 0.1412400162443041, "CI.CCC": 0.4426536917441134, "CI.LRL": 0.6943524287880429, "CI.SLA": 0.8784068458414434, "CI.MPM": 0.14379639614863912, "CI.JRC2": 0.8498002113426518, "CI.WBS": 1.167069929445148, "CI.CCA": 0.907257326010605, "CI.WHF": 4.091858992327219, "CI.GSC": 1.2799193956403903, "CI.LMR2": 0.9682845520050107, "CI.ISA": 2.097607923228375, "CI.TEH": 1.5589829301736386, "CI.EDW2": 6.015575719089284, "CI.LDR": 29.28589583540266}, "v0": 3200}
+2022-11-15 10:54:49,036 core  1132847DEBUG   optimization solved WLS with 32302 equations and 17 unknowns 19 times, minimal error: 5.5e-01
+2022-11-15 10:54:49,039 core  1132847DEBUG   freq band (2.80Hz, 5.60Hz): optimization result is {"g0": 1.8190434745422384e-05, "b": 0.16583001285024895, "nstations": 16, "error": 0.5494210930117005, "W": {"38474119": 685972840.06124}, "R": {"CI.CLC": 0.029998603801478927, "CI.SRT": 0.337179720651532, "CI.CCC": 0.6283703400912909, "CI.LRL": 0.1682856722358666, "CI.SLA": 1.1685110071756077, "CI.MPM": 0.09286806135185512, "CI.JRC2": 0.3903835987433348, "CI.WBS": 3.3052917514119433, "CI.CCA": 1.870171587652474, "CI.WHF": 12.786202450754185, "CI.GSC": 1.7223455972625095, "CI.LMR2": 0.3137108253300395, "CI.ISA": 1.6713514090098254, "CI.TEH": 2.431064939128446, "CI.EDW2": 3.5632274610262717, "CI.LDR": 35.693852692101345}, "v0": 3200}
+2022-11-15 10:54:49,096 core  1132850DEBUG   optimization solved WLS with 37262 equations and 17 unknowns 20 times, minimal error: 5.4e-01
+2022-11-15 10:54:49,122 core  1132850DEBUG   freq band (8.00Hz, 16.00Hz): optimization result is {"g0": 1.5084845733827561e-05, "b": 0.16469514143515113, "nstations": 16, "error": 0.5399333691859367, "W": {"38474119": 58947857.68333932}, "R": {"CI.CLC": 0.1350300889497316, "CI.SRT": 0.08474644627074965, "CI.CCC": 0.5573107731531358, "CI.LRL": 0.9855313244242266, "CI.SLA": 0.6899827668347323, "CI.MPM": 0.15846338197904672, "CI.JRC2": 1.6276743422599647, "CI.WBS": 1.1283490596769516, "CI.CCA": 0.5889103756913017, "CI.WHF": 3.419826849021161, "CI.GSC": 0.9484752567028979, "CI.LMR2": 1.5290063877038604, "CI.ISA": 1.1989529270549364, "CI.TEH": 1.3125286159098448, "CI.EDW2": 13.033471443897714, "CI.LDR": 13.226419088881316}, "v0": 3200}
+2022-11-15 10:54:49,343 core  1132851DEBUG   optimization solved WLS with 32063 equations and 17 unknowns 19 times, minimal error: 5.3e-01
+2022-11-15 10:54:49,344 core  1132851DEBUG   freq band (11.33Hz, 22.67Hz): optimization result is {"g0": 2.010979429951215e-05, "b": 0.19688755416045223, "nstations": 16, "error": 0.5308005707115475, "W": {"38474119": 38251651.72093527}, "R": {"CI.CLC": 0.11489885136895471, "CI.SRT": 0.07724316927975614, "CI.CCC": 0.5306015889755792, "CI.LRL": 0.7619730985571735, "CI.SLA": 0.2598540804836191, "CI.MPM": 0.10130773281686757, "CI.JRC2": 2.120196754158181, "CI.WBS": 1.027379042009791, "CI.CCA": 0.5118592352779265, "CI.WHF": 4.053473824609205, "CI.GSC": 0.37775280226761815, "CI.LMR2": 3.977507368965498, "CI.ISA": 1.5068756717912573, "CI.TEH": 2.062604154517783, "CI.EDW2": 35.33554708731642, "CI.LDR": 14.194997008767938}, "v0": 3200}
+2022-11-15 10:54:49,520 core  1132848DEBUG   optimization solved WLS with 35490 equations and 17 unknowns 19 times, minimal error: 5.2e-01
+2022-11-15 10:54:49,522 core  1132848DEBUG   freq band (4.00Hz, 8.00Hz): optimization result is {"g0": 1.7457304634791337e-05, "b": 0.1712725321190539, "nstations": 16, "error": 0.5228078219085025, "W": {"38474119": 553439817.9595373}, "R": {"CI.CLC": 0.036400145225957026, "CI.SRT": 0.18966060220163983, "CI.CCC": 0.42237230589985353, "CI.LRL": 0.34981529970605435, "CI.SLA": 0.9148450773814317, "CI.MPM": 0.10796582501027491, "CI.JRC2": 0.44091645557765247, "CI.WBS": 2.3259392186471426, "CI.CCA": 1.4252987534523087, "CI.WHF": 7.324770489266889, "CI.GSC": 1.4774825447094584, "CI.LMR2": 0.7013088623876538, "CI.ISA": 2.481046716831106, "CI.TEH": 2.114245156958792, "CI.EDW2": 4.272007391022244, "CI.LDR": 39.924831984750654}, "v0": 3200}
+2022-11-15 10:54:49,732 core  1132846DEBUG   create optimization plot at 00_test/plots/optimization_38474119_002.00Hz-004.00Hz.png
+2022-11-15 10:54:50,001 core  1132843DEBUG   create optimization plot at 00_test/plots/optimization_38474119_000.71Hz-001.41Hz.png
+2022-11-15 10:54:50,138 core  1132854DEBUG   create optimization plot at 00_test/plots/optimization_38474119_032.00Hz-064.00Hz.png
+2022-11-15 10:54:50,355 core  1132844DEBUG   create optimization plot at 00_test/plots/optimization_38474119_001.00Hz-002.00Hz.png
+2022-11-15 10:54:50,458 core  1132852DEBUG   create optimization plot at 00_test/plots/optimization_38474119_016.00Hz-032.00Hz.png
+2022-11-15 10:54:50,576 core  1132842DEBUG   create fits plot at 00_test/plots/fits_38474119_000.50Hz-001.00Hz.png
+2022-11-15 10:54:50,680 core  1132845DEBUG   create optimization plot at 00_test/plots/optimization_38474119_001.40Hz-002.80Hz.png
+2022-11-15 10:54:50,787 core  1132847DEBUG   create optimization plot at 00_test/plots/optimization_38474119_002.80Hz-005.60Hz.png
+2022-11-15 10:54:50,857 core  1132850DEBUG   create optimization plot at 00_test/plots/optimization_38474119_008.00Hz-016.00Hz.png
+2022-11-15 10:54:50,870 core  1132851DEBUG   create optimization plot at 00_test/plots/optimization_38474119_011.33Hz-022.67Hz.png
+2022-11-15 10:54:50,941 core  1132848DEBUG   create optimization plot at 00_test/plots/optimization_38474119_004.00Hz-008.00Hz.png
+2022-11-15 10:54:50,968 core  1132846DEBUG   create fits plot at 00_test/plots/fits_38474119_002.00Hz-004.00Hz.png
+2022-11-15 10:54:51,041 core  1132854DEBUG   create fits plot at 00_test/plots/fits_38474119_032.00Hz-064.00Hz.png
+2022-11-15 10:54:51,119 core  1132843DEBUG   create fits plot at 00_test/plots/fits_38474119_000.71Hz-001.41Hz.png
+2022-11-15 10:54:51,367 core  1132849DEBUG   create optimization plot at 00_test/plots/optimization_38474119_005.67Hz-011.33Hz.png
+2022-11-15 10:54:51,369 core  1132853DEBUG   create optimization plot at 00_test/plots/optimization_38474119_022.60Hz-045.20Hz.png
+2022-11-15 10:54:51,668 core  1132852DEBUG   create fits plot at 00_test/plots/fits_38474119_016.00Hz-032.00Hz.png
+2022-11-15 10:54:51,808 core  1132844DEBUG   create fits plot at 00_test/plots/fits_38474119_001.00Hz-002.00Hz.png
+2022-11-15 10:54:52,044 core  1132845DEBUG   create fits plot at 00_test/plots/fits_38474119_001.40Hz-002.80Hz.png
+2022-11-15 10:54:52,065 core  1132850DEBUG   create fits plot at 00_test/plots/fits_38474119_008.00Hz-016.00Hz.png
+2022-11-15 10:54:52,100 core  1132847DEBUG   create fits plot at 00_test/plots/fits_38474119_002.80Hz-005.60Hz.png
+2022-11-15 10:54:52,118 core  1132851DEBUG   create fits plot at 00_test/plots/fits_38474119_011.33Hz-022.67Hz.png
+2022-11-15 10:54:52,166 core  1132848DEBUG   create fits plot at 00_test/plots/fits_38474119_004.00Hz-008.00Hz.png
+2022-11-15 10:54:52,537 core  1132853DEBUG   create fits plot at 00_test/plots/fits_38474119_022.60Hz-045.20Hz.png
+2022-11-15 10:54:52,573 core  1132849DEBUG   create fits plot at 00_test/plots/fits_38474119_005.67Hz-011.33Hz.png
+2022-11-15 10:54:52,725 source1132759DEBUG   Optimization for M0 and ('fc', 'n') terminated because of convergence: norm_of_projected_gradient_<=_pgtol
+2022-11-15 10:54:52,726 core  1132759DEBUG   result is {"freq": [0.75, 1.06, 1.5, 2.1, 3.0, 4.2, 6.0, 8.5, 12.0, 17.0, 24.0, 33.9, 48.0], "g0": [3.44515098177525e-05, 3.134592082888513e-05, 2.6320972263200544e-05, 2.6320972263200544e-05, 1.6271075168605163e-05, 1.8190434745422384e-05, 1.7457304634791337e-05, 1.4351715614515398e-05, 1.5084845733827561e-05, 2.010979429951215e-05, 2.440161272315712e-05, 3.755709878389241e-05, 5.884312236240587e-05], "b": [0.0780106108989631, 0.1134635127482633, 0.13837932874951525, 0.1576076270498456, 0.14319739725632807, 0.16583001285024895, 0.1712725321190539, 0.1682088252482444, 0.16469514143515113, 0.19688755416045223, 0.2041194696840909, 0.24441409036141967, 0.3276722611810448], "nstations": [15, 13, 14, 14, 16, 16, 16, 16, 16, 16, 16, 15, 11], "error": [0.7170946889366053, 0.7241227008739496, 0.6930942649017221, 0.6442287985188765, 0.6459876783029109, 0.5494210930117005, 0.5228078219085025, 0.5206911009238487, 0.5399333691859367, 0.5308005707115475, 0.5368617297579156, 0.4732823722890114, 0.4177210177355774], "R": {"CI.SLA": [1.439311430165187, 1.0918794716687978, null, 1.1832540464816272, 1.5211854465273635, 1.1685110071756077, 0.9148450773814317, 0.8784068458414434, 0.6899827668347323, 0.2598540804836191, 0.19704093947088552, 0.08670253005320841, null], "CI.GSC": [1.8502619797750333, null, 4.037520981125314, 4.737465861241692, 2.3748194879818962, 1.7223455972625095, 1.4774825447094584, 1.2799193956403903, 0.9484752567028979, 0.37775280226761815, 0.09372813986272553, 0.07834106090045835, null], "CI.CCC": [1.9855622220687559, null, null, 1.4829867709536309, 1.3185830665135347, 0.6283703400912909, 0.42237230589985353, 0.4426536917441134, 0.5573107731531358, 0.5306015889755792, 0.7570807802128359, 0.42621355036654307, null], "CI.DAW": [null, null, null, null, null, null, null, null, null, null, null, null, null], "NN.QSM": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.LDR": [16.702509848182643, 16.834102512084055, 24.207296844919384, 25.306135006597266, 19.785926430046214, 35.693852692101345, 39.924831984750654, 29.28589583540266, 13.226419088881316, 14.194997008767938, 7.022267956628329, 8.690680322754783, null], "CI.DTP": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.CLC": [0.047888565599732584, 0.03973472140141206, 0.042803693203087155, 0.02641288851058855, 0.0511715606067477, 0.029998603801478927, 0.036400145225957026, 0.06937493857893665, 0.1350300889497316, 0.11489885136895471, 0.228863973021511, 0.27678446020154174, 0.08030045364256257], "CI.WMF": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.WRC2": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.SRT": [1.5681322646265172, 1.0001154942115473, 0.6095883395913625, 0.5073520201479388, 0.9420488123957491, 0.337179720651532, 0.18966060220163983, 0.1412400162443041, 0.08474644627074965, 0.07724316927975614, 0.08293211720946818, 0.03386703726974757, 0.007981720458106712], "CI.WBM": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.HAR": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.EDW2": [6.280260999259092, 6.378496595216688, 4.818536465837403, null, 1.2205943884662749, 3.5632274610262717, 4.272007391022244, 6.015575719089284, 13.033471443897714, 35.33554708731642, 45.21654752548648, 98.16321073506592, 260.1682415561692], "CI.WBS": [0.2869962846477938, 0.4377253378166728, 0.5468241104699618, null, 2.3152444373033285, 3.3052917514119433, 2.3259392186471426, 1.167069929445148, 1.1283490596769516, 1.027379042009791, 1.3606297695707452, null, null], "CI.HYS": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.TEH": [1.4037117715804135, 2.525577878708104, 2.7221013364776185, 2.6782771995046564, 1.7934109139134813, 2.431064939128446, 2.114245156958792, 1.5589829301736386, 1.3125286159098448, 2.062604154517783, 2.671387949918619, 5.37356307147544, 12.4754937614708], "CI.WCS2": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.TOW2": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.WAS2": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.LRL": [null, null, 0.08546314352840773, 0.057899085437695175, 0.12353750624355025, 0.1682856722358666, 0.34981529970605435, 0.6943524287880429, 0.9855313244242266, 0.7619730985571735, 0.8804428743706698, 0.6679013901410071, 0.17245935900119191], "CI.LMR2": [0.6616037903635601, 0.8413096677256284, 0.7009556388711689, 0.5991104496054982, 0.27547578850838866, 0.3137108253300395, 0.7013088623876538, 0.9682845520050107, 1.5290063877038604, 3.977507368965498, 6.208875033758564, 12.724139609969594, 34.76662300479766], "CI.WOR": [null, null, null, null, null, null, null, null, null, null, null, null, null], "LB.DAC": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.ISA": [0.39900660556043677, 0.5296254913644256, 0.5873146760919131, 0.7588907352817005, 0.7973201743674156, 1.6713514090098254, 2.481046716831106, 2.097607923228375, 1.1989529270549364, 1.5068756717912573, 1.4290330917217688, 1.1553734660902448, 0.8247428695209098], "CI.WLH2": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.FUR": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.CCA": [5.751046406457067, 3.707493984617965, 4.43028662104471, 3.439302236929187, 2.2224707497026444, 1.870171587652474, 1.4252987534523087, 0.907257326010605, 0.5889103756913017, 0.5118592352779265, 0.278339931019056, 0.2402623120397979, 0.14272597036925191], "CI.CGO": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.CWC": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.MPM": [0.30091416815979083, 0.3012756331382346, 0.2261943891139739, 0.16592876565965542, 0.11407332028410919, 0.09286806135185512, 0.10796582501027491, 0.14379639614863912, 0.15846338197904672, 0.10130773281686757, 0.1582394835375243, 0.3253860973751647, 0.2310691755238373], "CI.WHF": [0.41812674863036614, 0.5225597774024456, 1.2656973073426314, 14.50374701312639, 11.359872568922778, 12.786202450754185, 7.324770489266889, 4.091858992327219, 3.419826849021161, 4.053473824609205, 3.4332100744952645, 3.463225877040381, 4.156358478864844], "CI.JRC2": [0.31197859972018416, 0.7464986448634258, 1.2250961246264185, 0.6078576751773649, 0.555731021777559, 0.3903835987433348, 0.44091645557765247, 0.8498002113426518, 1.6276743422599647, 2.120196754158181, 2.763963222632562, 3.023702873635606, 0.709165501719883], "NN.GWY": [null, null, null, null, null, null, null, null, null, null, null, null, null]}, "events": {"38474119": {"M0": 192861110040933.5, "Mw": 3.4534964413862568, "Mcat": 3.06, "fc": 4.3556962517540345, "n": 2.149838964933125, "W": [11613290.573697034, 45540529.747763485, 148177891.364223, 427433536.55173093, 418736785.4765842, 685972840.06124, 553439817.9595373, 235844408.08012435, 58947857.68333932, 38251651.72093527, 11775326.345119638, 4818990.361452535, 11655384.255658623], "sds": [122002373219937.72, 170940539272894.78, 217897547396907.0, 264342442272468.8, 183147585901847.62, 167438785763341.94, 105277568624205.3, 48511618232312.22, 17179268323235.41, 9768504275862.877, 3839079717534.299, 1738722309168.1064, 1909738732968.2239], "fit_error": 0.2676530513988144}}, "v0": 3200}
+2022-11-15 10:54:55,112 core  1132759DEBUG   create eventresult plot at 00_test/plots/eventresult_38474119.png
+2022-11-15 10:55:00,205 core  1132759DEBUG   create eventsites plot at 00_test/plots/eventsites_38474119.png
+2022-11-15 10:55:00,206 core  1132759INFO    event 38474119 (no 1 of 1): end processing
+2022-11-15 10:55:00,267 warnings1132759WARNING /home/eule/anaconda/envs/eqspec/lib/python3.10/site-packages/matplotlib/axes/_axes.py:1174: RuntimeWarning: All-NaN axis encountered
+  miny = np.nanmin(masked_verts[..., 1])
+
+2022-11-15 10:55:00,267 warnings1132759WARNING /home/eule/anaconda/envs/eqspec/lib/python3.10/site-packages/matplotlib/axes/_axes.py:1175: RuntimeWarning: All-NaN axis encountered
+  maxy = np.nanmax(masked_verts[..., 1])
+
+2022-11-15 10:55:02,448 core  1132759DEBUG   create results plot at 00_test/plots/results.pdf
+2022-11-15 10:55:02,464 warnings1132759WARNING /home/eule/anaconda/envs/eqspec/lib/python3.10/site-packages/matplotlib/axes/_axes.py:1174: RuntimeWarning: All-NaN axis encountered
+  miny = np.nanmin(masked_verts[..., 1])
+
+2022-11-15 10:55:02,464 warnings1132759WARNING /home/eule/anaconda/envs/eqspec/lib/python3.10/site-packages/matplotlib/axes/_axes.py:1175: RuntimeWarning: All-NaN axis encountered
+  maxy = np.nanmax(masked_verts[..., 1])
+
+2022-11-15 10:55:07,038 core  1132759DEBUG   create sites plot at 00_test/plots/sites.pdf
+2022-11-15 10:55:07,555 core  1132759DEBUG   create sds plot at 00_test/plots/sds.pdf
+2022-11-15 10:55:07,737 core  1132759DEBUG   create mags plot at 00_test/plots/mags.pdf
+2022-11-15 10:55:07,738 core  1132759DEBUG   inversion results: {"freq": [0.75, 1.06, 1.5, 2.1, 3.0, 4.2, 6.0, 8.5, 12.0, 17.0, 24.0, 33.9, 48.0], "g0": [3.4451509817752514e-05, 3.134592082888514e-05, 2.6320972263200534e-05, 2.6320972263200534e-05, 1.6271075168605156e-05, 1.8190434745422374e-05, 1.7457304634791353e-05, 1.4351715614515396e-05, 1.5084845733827561e-05, 2.010979429951217e-05, 2.440161272315713e-05, 3.755709878389241e-05, 5.8843122362405946e-05], "b": [0.0780106108989631, 0.11346351274826333, 0.13837932874951528, 0.1576076270498456, 0.14319739725632807, 0.16583001285024898, 0.17127253211905388, 0.1682088252482444, 0.16469514143515113, 0.19688755416045223, 0.2041194696840909, 0.24441409036141973, 0.3276722611810448], "error": [0.7170946889366053, 0.7241227008739497, 0.6930942649017221, 0.6442287985188765, 0.6459876783029109, 0.5494210930117005, 0.5228078219085025, 0.5206911009238487, 0.5399333691859367, 0.5308005707115475, 0.5368617297579156, 0.4732823722890114, 0.4177210177355774], "R": {"CI.SLA": [1.439311430165187, 1.0918794716687978, null, 1.1832540464816272, 1.5211854465273635, 1.1685110071756077, 0.9148450773814317, 0.8784068458414434, 0.6899827668347323, 0.2598540804836191, 0.1970409394708855, 0.08670253005320841, null], "CI.GSC": [1.8502619797750333, null, 4.037520981125314, 4.737465861241691, 2.3748194879818962, 1.7223455972625092, 1.4774825447094584, 1.2799193956403903, 0.9484752567028979, 0.37775280226761815, 0.09372813986272552, 0.07834106090045834, null], "CI.CCC": [1.985562222068756, null, null, 1.4829867709536309, 1.3185830665135347, 0.6283703400912909, 0.42237230589985353, 0.4426536917441134, 0.5573107731531359, 0.5306015889755792, 0.7570807802128359, 0.42621355036654307, null], "CI.DAW": [null, null, null, null, null, null, null, null, null, null, null, null, null], "NN.QSM": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.LDR": [16.702509848182643, 16.83410251208405, 24.207296844919384, 25.306135006597266, 19.78592643004621, 35.69385269210134, 39.92483198475065, 29.285895835402663, 13.226419088881313, 14.194997008767938, 7.022267956628328, 8.690680322754782, null], "CI.DTP": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.CLC": [0.04788856559973259, 0.039734721401412064, 0.042803693203087155, 0.026412888510588546, 0.0511715606067477, 0.02999860380147893, 0.036400145225957026, 0.06937493857893665, 0.1350300889497316, 0.11489885136895472, 0.228863973021511, 0.27678446020154174, 0.08030045364256257], "CI.WMF": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.WRC2": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.SRT": [1.5681322646265172, 1.0001154942115473, 0.6095883395913625, 0.5073520201479388, 0.9420488123957491, 0.337179720651532, 0.18966060220163983, 0.14124001624430413, 0.08474644627074963, 0.07724316927975614, 0.08293211720946816, 0.033867037269747574, 0.007981720458106712], "CI.WBM": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.HAR": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.EDW2": [6.280260999259092, 6.378496595216687, 4.818536465837402, null, 1.2205943884662749, 3.5632274610262717, 4.272007391022244, 6.015575719089284, 13.033471443897714, 35.33554708731642, 45.216547525486476, 98.16321073506592, 260.1682415561692], "CI.WBS": [0.2869962846477938, 0.4377253378166728, 0.5468241104699618, null, 2.3152444373033285, 3.3052917514119433, 2.3259392186471426, 1.167069929445148, 1.1283490596769516, 1.027379042009791, 1.3606297695707452, null, null], "CI.HYS": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.TEH": [1.4037117715804133, 2.525577878708104, 2.722101336477618, 2.678277199504656, 1.793410913913481, 2.431064939128446, 2.114245156958792, 1.5589829301736384, 1.3125286159098448, 2.062604154517783, 2.671387949918619, 5.37356307147544, 12.4754937614708], "CI.WCS2": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.TOW2": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.WAS2": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.LRL": [null, null, 0.08546314352840773, 0.05789908543769517, 0.12353750624355024, 0.1682856722358666, 0.3498152997060543, 0.6943524287880429, 0.9855313244242268, 0.7619730985571735, 0.8804428743706698, 0.6679013901410071, 0.17245935900119191], "CI.LMR2": [0.6616037903635601, 0.8413096677256284, 0.7009556388711689, 0.5991104496054982, 0.27547578850838866, 0.3137108253300395, 0.7013088623876537, 0.9682845520050108, 1.5290063877038604, 3.977507368965498, 6.208875033758563, 12.72413960996959, 34.76662300479766], "CI.WOR": [null, null, null, null, null, null, null, null, null, null, null, null, null], "LB.DAC": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.ISA": [0.39900660556043677, 0.5296254913644256, 0.5873146760919131, 0.7588907352817005, 0.7973201743674155, 1.6713514090098254, 2.481046716831106, 2.097607923228375, 1.1989529270549364, 1.5068756717912573, 1.429033091721769, 1.1553734660902448, 0.8247428695209098], "CI.WLH2": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.FUR": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.CCA": [5.751046406457067, 3.7074939846179644, 4.43028662104471, 3.4393022369291866, 2.2224707497026444, 1.870171587652474, 1.4252987534523087, 0.907257326010605, 0.5889103756913016, 0.5118592352779265, 0.278339931019056, 0.24026231203979792, 0.14272597036925191], "CI.CGO": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.CWC": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.MPM": [0.3009141681597908, 0.3012756331382346, 0.22619438911397394, 0.16592876565965542, 0.1140733202841092, 0.0928680613518551, 0.1079658250102749, 0.14379639614863912, 0.15846338197904672, 0.10130773281686757, 0.1582394835375243, 0.32538609737516466, 0.2310691755238373], "CI.WHF": [0.4181267486303662, 0.5225597774024456, 1.2656973073426314, 14.50374701312639, 11.359872568922777, 12.786202450754184, 7.324770489266888, 4.091858992327219, 3.4198268490211605, 4.053473824609205, 3.433210074495264, 3.4632258770403808, 4.156358478864844], "CI.JRC2": [0.31197859972018416, 0.7464986448634258, 1.2250961246264185, 0.6078576751773649, 0.555731021777559, 0.3903835987433348, 0.4409164555776525, 0.8498002113426517, 1.6276743422599644, 2.120196754158181, 2.763963222632562, 3.023702873635606, 0.709165501719883], "NN.GWY": [null, null, null, null, null, null, null, null, null, null, null, null, null]}, "events": {"38474119": {"M0": 192861110040933.5, "Mw": 3.4534964413862568, "Mcat": 3.06, "fc": 4.3556962517540345, "n": 2.149838964933125, "g0": [3.44515098177525e-05, 3.134592082888513e-05, 2.6320972263200544e-05, 2.6320972263200544e-05, 1.6271075168605163e-05, 1.8190434745422384e-05, 1.7457304634791337e-05, 1.4351715614515398e-05, 1.5084845733827561e-05, 2.010979429951215e-05, 2.440161272315712e-05, 3.755709878389241e-05, 5.884312236240587e-05], "b": [0.0780106108989631, 0.1134635127482633, 0.13837932874951525, 0.1576076270498456, 0.14319739725632807, 0.16583001285024895, 0.1712725321190539, 0.1682088252482444, 0.16469514143515113, 0.19688755416045223, 0.2041194696840909, 0.24441409036141967, 0.3276722611810448], "nstations": [15, 13, 14, 14, 16, 16, 16, 16, 16, 16, 16, 15, 11], "error": [0.7170946889366053, 0.7241227008739496, 0.6930942649017221, 0.6442287985188765, 0.6459876783029109, 0.5494210930117005, 0.5228078219085025, 0.5206911009238487, 0.5399333691859367, 0.5308005707115475, 0.5368617297579156, 0.4732823722890114, 0.4177210177355774], "W": [11613290.573697034, 45540529.747763485, 148177891.364223, 427433536.55173093, 418736785.4765842, 685972840.06124, 553439817.9595373, 235844408.08012435, 58947857.68333932, 38251651.72093527, 11775326.345119638, 4818990.361452535, 11655384.255658623], "sds": [122002373219937.72, 170940539272894.78, 217897547396907.0, 264342442272468.8, 183147585901847.62, 167438785763341.94, 105277568624205.3, 48511618232312.22, 17179268323235.41, 9768504275862.877, 3839079717534.299, 1738722309168.1064, 1909738732968.2239], "fit_error": 0.2676530513988144, "R": {"CI.SLA": [1.439311430165187, 1.0918794716687978, null, 1.1832540464816272, 1.5211854465273635, 1.1685110071756077, 0.9148450773814317, 0.8784068458414434, 0.6899827668347323, 0.2598540804836191, 0.19704093947088552, 0.08670253005320841, null], "CI.GSC": [1.8502619797750333, null, 4.037520981125314, 4.737465861241692, 2.3748194879818962, 1.7223455972625095, 1.4774825447094584, 1.2799193956403903, 0.9484752567028979, 0.37775280226761815, 0.09372813986272553, 0.07834106090045835, null], "CI.CCC": [1.9855622220687559, null, null, 1.4829867709536309, 1.3185830665135347, 0.6283703400912909, 0.42237230589985353, 0.4426536917441134, 0.5573107731531358, 0.5306015889755792, 0.7570807802128359, 0.42621355036654307, null], "CI.DAW": [null, null, null, null, null, null, null, null, null, null, null, null, null], "NN.QSM": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.LDR": [16.702509848182643, 16.834102512084055, 24.207296844919384, 25.306135006597266, 19.785926430046214, 35.693852692101345, 39.924831984750654, 29.28589583540266, 13.226419088881316, 14.194997008767938, 7.022267956628329, 8.690680322754783, null], "CI.DTP": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.CLC": [0.047888565599732584, 0.03973472140141206, 0.042803693203087155, 0.02641288851058855, 0.0511715606067477, 0.029998603801478927, 0.036400145225957026, 0.06937493857893665, 0.1350300889497316, 0.11489885136895471, 0.228863973021511, 0.27678446020154174, 0.08030045364256257], "CI.WMF": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.WRC2": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.SRT": [1.5681322646265172, 1.0001154942115473, 0.6095883395913625, 0.5073520201479388, 0.9420488123957491, 0.337179720651532, 0.18966060220163983, 0.1412400162443041, 0.08474644627074965, 0.07724316927975614, 0.08293211720946818, 0.03386703726974757, 0.007981720458106712], "CI.WBM": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.HAR": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.EDW2": [6.280260999259092, 6.378496595216688, 4.818536465837403, null, 1.2205943884662749, 3.5632274610262717, 4.272007391022244, 6.015575719089284, 13.033471443897714, 35.33554708731642, 45.21654752548648, 98.16321073506592, 260.1682415561692], "CI.WBS": [0.2869962846477938, 0.4377253378166728, 0.5468241104699618, null, 2.3152444373033285, 3.3052917514119433, 2.3259392186471426, 1.167069929445148, 1.1283490596769516, 1.027379042009791, 1.3606297695707452, null, null], "CI.HYS": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.TEH": [1.4037117715804135, 2.525577878708104, 2.7221013364776185, 2.6782771995046564, 1.7934109139134813, 2.431064939128446, 2.114245156958792, 1.5589829301736386, 1.3125286159098448, 2.062604154517783, 2.671387949918619, 5.37356307147544, 12.4754937614708], "CI.WCS2": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.TOW2": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.WAS2": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.LRL": [null, null, 0.08546314352840773, 0.057899085437695175, 0.12353750624355025, 0.1682856722358666, 0.34981529970605435, 0.6943524287880429, 0.9855313244242266, 0.7619730985571735, 0.8804428743706698, 0.6679013901410071, 0.17245935900119191], "CI.LMR2": [0.6616037903635601, 0.8413096677256284, 0.7009556388711689, 0.5991104496054982, 0.27547578850838866, 0.3137108253300395, 0.7013088623876538, 0.9682845520050107, 1.5290063877038604, 3.977507368965498, 6.208875033758564, 12.724139609969594, 34.76662300479766], "CI.WOR": [null, null, null, null, null, null, null, null, null, null, null, null, null], "LB.DAC": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.ISA": [0.39900660556043677, 0.5296254913644256, 0.5873146760919131, 0.7588907352817005, 0.7973201743674156, 1.6713514090098254, 2.481046716831106, 2.097607923228375, 1.1989529270549364, 1.5068756717912573, 1.4290330917217688, 1.1553734660902448, 0.8247428695209098], "CI.WLH2": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.FUR": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.CCA": [5.751046406457067, 3.707493984617965, 4.43028662104471, 3.439302236929187, 2.2224707497026444, 1.870171587652474, 1.4252987534523087, 0.907257326010605, 0.5889103756913017, 0.5118592352779265, 0.278339931019056, 0.2402623120397979, 0.14272597036925191], "CI.CGO": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.CWC": [null, null, null, null, null, null, null, null, null, null, null, null, null], "CI.MPM": [0.30091416815979083, 0.3012756331382346, 0.2261943891139739, 0.16592876565965542, 0.11407332028410919, 0.09286806135185512, 0.10796582501027491, 0.14379639614863912, 0.15846338197904672, 0.10130773281686757, 0.1582394835375243, 0.3253860973751647, 0.2310691755238373], "CI.WHF": [0.41812674863036614, 0.5225597774024456, 1.2656973073426314, 14.50374701312639, 11.359872568922778, 12.786202450754185, 7.324770489266889, 4.091858992327219, 3.419826849021161, 4.053473824609205, 3.4332100744952645, 3.463225877040381, 4.156358478864844], "CI.JRC2": [0.31197859972018416, 0.7464986448634258, 1.2250961246264185, 0.6078576751773649, 0.555731021777559, 0.3903835987433348, 0.44091645557765247, 0.8498002113426518, 1.6276743422599647, 2.120196754158181, 2.763963222632562, 3.023702873635606, 0.709165501719883], "NN.GWY": [null, null, null, null, null, null, null, null, null, null, null, null, null]}, "v0": 3200}}, "config": {"invert_events_simultaneously": false, "mean": "robust", "v0": 3200, "rho0": 2700, "R0": 1, "free_surface": 4, "freqs": {"width": 1, "cfreqs": [0.75, 1.06, 1.5, 2.1, 3.0, 4.2, 6.0, 8.5, 12.0, 17.0, 24.0, 33.9, 48.0]}, "filter": {"corners": 2, "zerophase": true}, "optimize": {"method": "golden", "tol": 0.1}, "g0_bounds": [1e-08, 0.001], "b_bounds": [0.001, 10], "seismic_moment_method": "robust_fit", "seismic_moment_options": {"fc": null, "n": null, "gamma": 2, "fc_lim": [0.5, 20], "num_points": 7}, "bulk_window": ["S-1s", "S+3s"], "coda_normalization": null, "coda_window": ["S+3s", ["S+50s", "2SNR"]], "noise_windows": [["OT-25s", "OT-20s"], ["OT-20s", "OT-10s"], ["OT-10s", "OT+0s"]], "weight": [1, "bulkwindow"], "remove_noise": true, "adjust_sonset": null, "remove_response": "sensitivity", "correct_for_elevation": false, "skip": {"coda_window": 2, "num_pairs": 3}}}
+2022-11-15 10:55:07,739 core  1132759DEBUG   used time: 43.0s
