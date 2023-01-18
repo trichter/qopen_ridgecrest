@@ -68,6 +68,8 @@ print(freq, sds)
 
 ```
 
+Energy site amplifications are located in the file `qopen/02_sites/results.json`, key `'R'`.
+
 ### Run code
 
 #### Preparation
@@ -94,7 +96,7 @@ print(freq, sds)
 * Optionally, recreate the event CSZ files
   - Download the phase files RC_phase_*.tar, unpack these into data/phase
   - Downlaod the catalog files to data
-  - Change to `scripts` folder and run `python prepare_events.py` to prepare a catalog in CSZ format readable by ObsPy```
+  - Change to `scripts` folder and run `python prepare_events.py` to prepare a catalog in CSZ format readable by ObsPy
 
 #### Run Qopen
 
